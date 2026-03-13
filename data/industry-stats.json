@@ -1,0 +1,120 @@
+{
+  "categories": [
+    {
+      "name": "Legal Services",
+      "industries": [
+        {
+          "name": "Personal Injury Law",
+          "averageMonthlyVisitors": 2500,
+          "averageConversionRate": 3.2,
+          "averageJobValue": 7500,
+          "averageCloseRate": 35
+        },
+        {
+          "name": "General Legal Services",
+          "averageMonthlyVisitors": 1500,
+          "averageConversionRate": 2.5,
+          "averageJobValue": 5000,
+          "averageCloseRate": 30
+        }
+      ]
+    },
+    {
+      "name": "Construction & Contractors",
+      "industries": [
+        {
+          "name": "Roofing Contractors",
+          "averageMonthlyVisitors": 1800,
+          "averageConversionRate": 2.8,
+          "averageJobValue": 9500,
+          "averageCloseRate": 40
+        },
+        {
+          "name": "HVAC Services",
+          "averageMonthlyVisitors": 2200,
+          "averageConversionRate": 3.0,
+          "averageJobValue": 6500,
+          "averageCloseRate": 30
+        },
+        {
+          "name": "General Contractors",
+          "averageMonthlyVisitors": 1600,
+          "averageConversionRate": 2.6,
+          "averageJobValue": 8000,
+          "averageCloseRate": 35
+        }
+      ]
+    },
+    {
+      "name": "Health & Wellness",
+      "industries": [
+        {
+          "name": "Chiropractic Services",
+          "averageMonthlyVisitors": 1500,
+          "averageConversionRate": 3.5,
+          "averageJobValue": 250,
+          "averageCloseRate": 50
+        },
+        {
+          "name": "Dental Practices",
+          "averageMonthlyVisitors": 1800,
+          "averageConversionRate": 3.0,
+          "averageJobValue": 350,
+          "averageCloseRate": 45
+        },
+        {
+          "name": "General Health Services",
+          "averageMonthlyVisitors": 1200,
+          "averageConversionRate": 2.8,
+          "averageJobValue": 500,
+          "averageCloseRate": 40
+        }
+      ]
+    },
+    {
+      "name": "Home & Property Services",
+      "industries": [
+        {
+          "name": "Landscaping & Lawn Care",
+          "averageMonthlyVisitors": 1700,
+          "averageConversionRate": 2.5,
+          "averageJobValue": 2500,
+          "averageCloseRate": 40
+        },
+        {
+          "name": "Plumbing Services",
+          "averageMonthlyVisitors": 2000,
+          "averageConversionRate": 2.5,
+          "averageJobValue": 5500,
+          "averageCloseRate": 32
+        },
+        {
+          "name": "General Home Services",
+          "averageMonthlyVisitors": 1600,
+          "averageConversionRate": 2.6,
+          "averageJobValue": 4000,
+          "averageCloseRate": 35
+        }
+      ]
+    },
+    {
+      "name": "Specialized Services",
+      "industries": [
+        {
+          "name": "Solar & Energy Solutions",
+          "averageMonthlyVisitors": 1000,
+          "averageConversionRate": 3.0,
+          "averageJobValue": 18000,
+          "averageCloseRate": 40
+        },
+        {
+          "name": "Security & Automation",
+          "averageMonthlyVisitors": 900,
+          "averageConversionRate": 2.7,
+          "averageJobValue": 5000,
+          "averageCloseRate": 35
+        }
+      ]
+    }
+  ]
+}
