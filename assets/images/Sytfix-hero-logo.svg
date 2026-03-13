@@ -1,0 +1,128 @@
+<svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+
+<linearGradient id="traceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#6ea8ff"/>
+<stop offset="100%" stop-color="#ffffff"/>
+</linearGradient>
+
+<filter id="glow">
+<feGaussianBlur stdDeviation="4" result="b"/>
+<feMerge>
+<feMergeNode in="b"/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+</filter>
+
+</defs>
+
+<style>
+
+.brand{
+font-family:Orbitron,Arial,sans-serif;
+font-size:72px;
+fill:white;
+letter-spacing:3px;
+font-weight:700;
+filter:url(#glow);
+}
+
+.tag{
+font-family:Inter,Arial,sans-serif;
+font-size:14px;
+fill:#6ea8ff;
+letter-spacing:6px;
+text-transform:uppercase;
+}
+
+.hex{
+stroke:#6ea8ff;
+stroke-width:1;
+fill:none;
+opacity:.15;
+}
+
+.trace{
+stroke:url(#traceGrad);
+stroke-width:2;
+fill:none;
+stroke-dasharray:260;
+stroke-dashoffset:260;
+animation:flow 4s linear infinite;
+}
+
+.signal{
+stroke:#6ea8ff;
+stroke-width:1.5;
+fill:none;
+stroke-dasharray:140;
+stroke-dashoffset:140;
+animation:flow 2.5s linear infinite;
+}
+
+.node{
+fill:white;
+animation:pulse 2s ease-in-out infinite;
+}
+
+@keyframes flow{
+0%{stroke-dashoffset:260;opacity:0}
+40%{opacity:1}
+100%{stroke-dashoffset:-260;opacity:0}
+}
+
+@keyframes pulse{
+0%,100%{opacity:.4}
+50%{opacity:1}
+}
+
+</style>
+
+<!-- HEX GRID BACKGROUND -->
+<g transform="translate(100 50)">
+<polygon points="0,-20 17,-10 17,10 0,20 -17,10 -17,-10" class="hex"/>
+<polygon points="34,-20 51,-10 51,10 34,20 17,10 17,-10" class="hex"/>
+<polygon points="68,-20 85,-10 85,10 68,20 51,10 51,-10" class="hex"/>
+
+<polygon points="0,20 17,30 17,50 0,60 -17,50 -17,30" class="hex"/>
+<polygon points="34,20 51,30 51,50 34,60 17,50 17,30" class="hex"/>
+<polygon points="68,20 85,30 85,50 68,60 51,50 51,30" class="hex"/>
+</g>
+
+<!-- CORE SYSTEM HEX -->
+<g transform="translate(200 120)" filter="url(#glow)">
+
+<polygon
+points="0,-52 46,-26 46,26 0,52 -46,26 -46,-26"
+stroke="#6ea8ff"
+stroke-width="2"
+fill="none"
+opacity=".5"
+/>
+
+<path d="M0 -52 L0 52" class="trace"/>
+<path d="M-46 -26 L46 26" class="trace"/>
+<path d="M-46 26 L46 -26" class="trace"/>
+
+<circle cx="0" cy="-52" r="3" class="node"/>
+<circle cx="46" cy="0" r="3" class="node"/>
+<circle cx="-46" cy="0" r="3" class="node"/>
+<circle cx="0" cy="52" r="3" class="node"/>
+
+</g>
+
+<!-- DATA STREAMS -->
+<path d="M260 120 L360 120" class="signal"/>
+<path d="M260 100 L360 100" class="signal"/>
+<path d="M260 140 L360 140" class="signal"/>
+
+<!-- BRAND -->
+<text x="370" y="135" class="brand">SytFix</text>
+
+<!-- TAGLINE -->
+<text x="372" y="165" class="tag">
+Engineering Digital Growth
+</text>
+
+</svg>
