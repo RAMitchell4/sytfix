@@ -1,0 +1,89 @@
+<svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6ea8ff" />
+      <stop offset="100%" stop-color="#ffffff" />
+    </linearGradient>
+
+    <filter id="neonGlow">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;300&amp;display=swap');
+
+    .trace-line{
+      stroke:#6ea8ff;
+      stroke-width:1.5;
+      fill:none;
+      stroke-dasharray:200;
+      stroke-dashoffset:200;
+      animation:trace 3s ease-in-out infinite;
+    }
+
+    .node{
+      fill:#fff;
+      animation:pulse 2s infinite;
+    }
+
+    .brand-text{
+      font-family:'Inter',sans-serif;
+      font-weight:700;
+      font-size:64px;
+      fill:#ffffff;
+      filter:url(#neonGlow);
+    }
+
+    .tagline{
+      font-family:'Inter',sans-serif;
+      font-weight:300;
+      font-size:14px;
+      fill:#6ea8ff;
+      text-transform:uppercase;
+      letter-spacing:5px;
+    }
+
+    @keyframes trace{
+      0%{stroke-dashoffset:200;opacity:0;}
+      50%{stroke-dashoffset:0;opacity:1;}
+      100%{stroke-dashoffset:-200;opacity:0;}
+    }
+
+    @keyframes pulse{
+      0%,100%{transform:scale(1);opacity:.5;}
+      50%{transform:scale(1.5);opacity:1;}
+    }
+  </style>
+
+  <!-- Tech Hex Icon -->
+  <g transform="translate(50, 90)">
+    <polygon
+      points="0,-45 39,-22.5 39,22.5 0,45 -39,22.5 -39,-22.5"
+      stroke="#6ea8ff"
+      stroke-width="2"
+      fill="none"
+      opacity="0.3"
+    />
+
+    <path
+      d="M0 -45 L0 45 M-39 -22.5 L39 22.5 M-39 22.5 L39 -22.5"
+      class="trace-line"
+    />
+
+    <circle cx="0" cy="-45" r="3" class="node"/>
+    <circle cx="39" cy="22.5" r="3" class="node"/>
+    <circle cx="-39" cy="22.5" r="3" class="node"/>
+  </g>
+
+  <!-- Brand -->
+  <text x="100" y="95" class="brand-text">SytFix</text>
+
+  <!-- Tagline -->
+  <text x="105" y="125" class="tagline">Engineering Digital Growth</text>
+
+</svg>
