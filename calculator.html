@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SytFix | Revenue Calculator</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="wl-header">
+  <div class="wl-container">
+    
+    <div class="wl-tier-top">
+      <a href="index.html" class="wl-logo-link" aria-label="SytFix Home">
+        <svg class="wl-logo-svg" viewBox="0 0 550 140" xmlns="http://www.w3.org/2000/svg">
+          <style>
+            .t-web { font-family: 'Jost', sans-serif; font-weight: 800; font-size: 82px; fill: #fff; letter-spacing: -3px; }
+            .t-lift { font-family: 'Lexend Deca', sans-serif; font-weight: 600; font-size: 84px; fill: #6ea8ff; letter-spacing: 6px; }
+            .t-tag { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 18px; fill: #fff; text-transform: uppercase; letter-spacing: 5.5px; }
+
+            .hex-line { 
+              stroke: #6ea8ff; 
+              stroke-width: 2.5; 
+              fill: none; 
+              stroke-dasharray: 450; 
+              stroke-dashoffset: 450; 
+              animation: draw 6s linear infinite; 
+            }
+
+            @keyframes draw { 
+              0% { stroke-dashoffset: 450; } 
+              100% { stroke-dashoffset: -450; } 
+            }
+          </style>
+          
+          <g transform="translate(45, 70)">
+            <polygon points="0,-42 36,-21 36,21 0,42 -36,21 -36,-21" class="hex-line" />
+            <circle cx="0" cy="0" r="3.5" fill="#FFF" />
+          </g>
+
+          <text x="110" y="80">
+            <tspan class="t-web">Syt</tspan><tspan class="t-lift">FIX</tspan>
+          </text>
+
+          <text x="112" y="115" class="t-tag">ENGINEERING DIGITAL GROWTH</text>
+        </svg>
+      </a>
+
+      <div class="wl-utility">
+        <a href="calculator.html" class="wl-mini-btn">
+          Free Audit
+        </a>
+      </div>
+    </div>
+
+    <nav class="wl-tier-bottom">
+      <div class="wl-nav-links">
+        <a href="specialties.html">Specialties</a>
+        <a href="process.html">Process</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+  </div>
+</header>
+
+<style>
+  .wl-header {
+    background: #05070a;
+    border-bottom: 1px solid rgba(110, 168, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    font-family: 'Jost', sans-serif;
+  }
+
+  .wl-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px 30px 0 30px;
+  }
+
+  .wl-tier-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+  }
+
+  .wl-logo-svg { height: 85px; width: auto; display: block; }
+
+  .wl-utility {
+    display: flex;
+    align-items: center;
+  }
+
+  .wl-mini-btn {
+    background: #6ea8ff;
+    color: #05070a;
+    min-width: 100px;
+    padding: 10px 20px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .wl-mini-btn:hover { 
+    background: #fff; 
+    box-shadow: 0 0 20px rgba(110, 168, 255, 0.5); 
+    transform: translateY(-1px);
+  }
+
+  .wl-tier-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 0;
+  }
+
+  .wl-nav-links { 
+    display: flex; 
+    gap: 45px; 
+  }
+
+  .wl-nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    opacity: 0.8;
+    transition: 0.2s;
+  }
+
+  .wl-nav-links a:hover { 
+    opacity: 1; 
+    color: #6ea8ff; 
+  }
+
+  @media (max-width: 800px) {
+    .wl-logo-svg { height: 60px; }
+    .wl-container { padding: 8px 15px 0 15px; }
+
+    .wl-mini-btn { 
+      padding: 8px 14px; 
+      font-size: 10px; 
+      min-width: auto; 
+    }
+
+    .wl-tier-bottom {
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .wl-tier-bottom::-webkit-scrollbar { display: none; }
+
+    .wl-nav-links { gap: 25px; }
+    .wl-nav-links a { font-size: 11px; white-space: nowrap; }
+  }
+</style>
+
+
+<section class="calculator-section">
+  <h1>Revenue Calculator</h1>
+  <p class="subtitle">Estimate your website's potential revenue easily.</p>
+
+  <form id="calculator-form" class="calculator-form">
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="industry">Select Industry</label>
+        <select id="industry" required>
+          <option value="" disabled selected>Choose industry</option>
+          <option value="lawyer">Lawyer</option>
+          <option value="roofing">Roofing</option>
+          <option value="hvac">HVAC</option>
+          <option value="other">Other Services</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="traffic">Monthly Visitors</label>
+        <input type="number" id="traffic" placeholder="e.g., 1500">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="conversion">Conversion Rate (%)</label>
+        <input type="number" id="conversion" placeholder="e.g., 5">
+      </div>
+
+      <div class="form-group">
+        <label for="averageSale">Average Sale ($)</label>
+        <input type="number" id="averageSale" placeholder="e.g., 500">
+      </div>
+    </div>
+
+    <button type="submit" class="primary-btn">Calculate</button>
+
+  </form>
+
+  <div class="results" id="results" style="display:none;">
+    <h3>Estimated Revenue:</h3>
+
+    <div class="result-grid">
+      <div id="monthlyRevenue"></div>
+      <div id="annualRevenue"></div>
+    </div>
+  </div>
+
+</section>
+
+
+<footer>
+  &copy; 2026 SytFix. All rights reserved.
+</footer>
+
+
+<script>
+const form = document.getElementById('calculator-form');
+const results = document.getElementById('results');
+const monthlyEl = document.getElementById('monthlyRevenue');
+const annualEl = document.getElementById('annualRevenue');
+
+form.addEventListener('submit', (e) => {
+
+  e.preventDefault();
+
+  const industry = document.getElementById('industry').value;
+  let traffic = parseFloat(document.getElementById('traffic').value);
+  const conversion = parseFloat(document.getElementById('conversion').value);
+  const averageSale = parseFloat(document.getElementById('averageSale').value);
+
+  const industryDefaults = {
+    lawyer: 2000,
+    roofing: 1200,
+    hvac: 1500,
+    other: 1000
+  };
+
+  if(!traffic) traffic = industryDefaults[industry] || 1000;
+
+  const monthlyRevenue = (traffic * (conversion/100) * averageSale).toFixed(2);
+  const annualRevenue = (monthlyRevenue * 12).toFixed(2);
+
+  monthlyEl.textContent = `Monthly: $${monthlyRevenue}`;
+  annualEl.textContent = `Annual: $${annualRevenue}`;
+
+  results.style.display = 'block';
+
+});
+</script>
+
+</body>
+</html>
