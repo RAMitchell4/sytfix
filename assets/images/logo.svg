@@ -1,0 +1,37 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+
+<style>
+  .trace { stroke: #6ea8ff; stroke-width: 2; fill: none; }
+  .glow { filter: url(#glow); }
+  .node { fill: #ffffff; animation: pulse 1.8s ease-in-out infinite; }
+  .text { font-family: "Orbitron", sans-serif; font-size: 36px; fill: #ffffff; font-weight: bold; letter-spacing: 1px; }
+
+  @keyframes pulse {
+    0%,100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+</style>
+
+<defs>
+  <linearGradient id="traceGrad" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#8bb6ff"/>
+    <stop offset="100%" stop-color="#ffffff"/>
+  </linearGradient>
+
+  <filter id="glow">
+    <feGaussianBlur stdDeviation="3" result="b"/>
+    <feMerge>
+      <feMergeNode in="b"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+</defs>
+
+<!-- Sleek hexagon-like tech icon -->
+<g transform="translate(100,100)" class="glow">
+  <polygon points="0,-60 52,-30 52,30 0,60 -52,30 -52,-30" stroke="url(#traceGrad)" stroke-width="3" fill="none"/>
+  
+  <!-- Inner circuit lines -->
+  <line x1="0" y1="-60" x2="0" y2="60" class="trace"/>
+  <line x1="-52" y1="-30" x2="52" y2="30" class="trace"/>
+  <line x1="-52" y1="30" x2="52" y2="-30" class
