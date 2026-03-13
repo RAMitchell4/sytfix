@@ -1,0 +1,294 @@
+/* ======================================
+   Variables for Dark/Light Mode
+====================================== */
+:root {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --primary-color: #0077cc;
+  --secondary-color: #00aaff;
+  --card-bg: #1f1f1f;
+  --card-shadow: rgba(0,0,0,0.5);
+  --footer-bg: #1a1a1a;
+  --footer-text: #cccccc;
+}
+
+/* ======================================
+   Base / Global Styles
+====================================== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ======================================
+   Container / Centering
+====================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ======================================
+   Header / Navigation
+====================================== */
+header {
+  width: 100%;
+  background-color: var(--footer-bg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+nav a {
+  margin-left: 25px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  color: #cccccc;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--secondary-color);
+}
+
+/* ======================================
+   Hero Section
+====================================== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 400px;
+  background: url('../images/hero-bg.svg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  color: #ffffff;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Dims the animation slightly */
+  z-index: -1;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  z-index: 1;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  z-index: 1;
+  color: #cccccc;
+}
+
+/* ======================================
+   Sections (Specialties, Calculator, Process, Contact)
+====================================== */
+.specialties-section,
+.calculator-section,
+.process-section,
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+  padding: 60px 20px;
+}
+
+/* ======================================
+   Cards (Specialties & Process Steps)
+====================================== */
+.specialty-card,
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.specialty-card:hover,
+.process-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.specialty-card img,
+.process-step img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+/* ======================================
+   Calculator Form
+====================================== */
+.calculator-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  max-width: 700px;
+}
+
+.calculator-form .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.calculator-form .form-group {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.calculator-form label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+
+.calculator-form input,
+.calculator-form select,
+.calculator-form textarea {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  font-size: 1rem;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calculator-form input:focus,
+.calculator-form select:focus,
+.calculator-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 6px rgba(0,170,255,0.4);
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.primary-btn:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+.results {
+  margin-top: 25px;
+  padding: 20px;
+  background: #1f1f1f;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 700px;
+  color: var(--text-color);
+}
+
+.result-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.result-grid div {
+  background: #2a2a2a;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  min-width: 150px;
+}
+
+/* ======================================
+   Footer
+====================================== */
+footer {
+  text-align: center;
+  padding: 25px 0;
+  font-size: 0.9rem;
+  color: var(--footer-text);
+  background-color: var(--footer-bg);
+  margin-top: 40px;
+}
+
+/* ======================================
+   Responsive
+====================================== */
+@media (max-width: 768px) {
+  .calculator-form .form-row {
+    flex-direction: column;
+  }
+
+  nav a {
+    margin-left: 15px;
+    font-size: 0.95rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
