@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- HEADER -->
+  
 <header class="wl-header">
   <div class="wl-container">
     
@@ -55,6 +55,7 @@
 
     <nav class="wl-tier-bottom">
       <div class="wl-nav-links">
+        <a href="index.html">Home</a>
         <a href="specialties.html">Specialties</a>
         <a href="process.html">Process</a>
         <a href="contact.html">Contact</a>
@@ -139,4 +140,39 @@
     transition: 0.2s;
   }
 
-  .wl
+  .wl-nav-links a:hover { 
+    opacity: 1; 
+    color: #6ea8ff; 
+  }
+
+  @media (max-width: 800px) {
+    .wl-logo-svg { height: 60px; }
+    .wl-container { padding: 8px 15px 0 15px; }
+
+    .wl-mini-btn { 
+      padding: 8px 14px; 
+      font-size: 10px; 
+      min-width: auto; 
+    }
+
+    .wl-tier-bottom {
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .wl-tier-bottom::-webkit-scrollbar { display: none; }
+
+    .wl-nav-links { gap: 25px; }
+    .wl-nav-links a { font-size: 11px; white-space: nowrap; }
+  }
+</style>
+
+<main style="min-height: 70vh;">
+  </main>
+
+<footer>
+  &copy; 2026 SytFix. All rights reserved.
+</footer>
+
+</body>
+</html>
