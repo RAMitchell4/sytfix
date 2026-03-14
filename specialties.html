@@ -6,187 +6,33 @@
   <title>SytFix | Specialties</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    /* Animated SVG Background */
-    .site-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      background: url('assets/images/background.svg') no-repeat center center;
-      background-size: cover;
-      background-color: #05070a; 
-    }
-
-    /* Shared Header Styles */
-    .wl-header {
-      background: #05070a;
-      border-bottom: 1px solid rgba(110, 168, 255, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 10000;
-      font-family: 'Jost', sans-serif;
-    }
-
-    .wl-container {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 10px 30px 0 30px;
-    }
-
-    .wl-tier-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 15px;
-    }
-
+    .site-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; background: url('assets/images/background.svg') no-repeat center center; background-size: cover; background-color: #05070a; }
+    .wl-header { background: #05070a; border-bottom: 1px solid rgba(110, 168, 255, 0.2); position: sticky; top: 0; z-index: 10000; font-family: 'Jost', sans-serif; }
+    .wl-container { max-width: 1300px; margin: 0 auto; padding: 10px 30px 0 30px; }
+    .wl-tier-top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; }
     .wl-logo-svg { height: 85px; width: auto; display: block; }
-
-    .wl-utility {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 6px;
-      max-width: 220px;
-    }
-
-    .wl-mini-btn {
-      background: #6ea8ff;
-      color: #05070a;
-      min-width: 100px; 
-      padding: 10px 20px;
-      border-radius: 2px;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    .wl-mini-btn:hover { 
-      background: #fff; 
-      box-shadow: 0 0 20px rgba(110, 168, 255, 0.5); 
-      transform: translateY(-1px);
-    }
-
-    .wl-calc-subtext {
-      color: #a0c4ff;
-      font-size: 9px;
-      line-height: 1.3;
-      text-align: right;
-      font-family: 'Jost', sans-serif;
-    }
-
-    .wl-tier-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 15px 0;
-    }
-
-    .wl-nav-links { 
-      display: flex; 
-      gap: 45px; 
-      align-items: center;
-    }
-
-    .wl-nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      opacity: 0.8;
-      transition: 0.2s;
-      display: flex;
-      align-items: center;
-    }
-
-    .wl-nav-links a:hover { 
-      opacity: 1; 
-      color: #6ea8ff; 
-    }
-
-    /* Base Body Styles */
-    body {
-      margin: 0;
-      color: #ffffff;
-      font-family: 'Jost', sans-serif;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-    }
-
-    .page-hero {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .page-hero h1 {
-      font-size: 2.5rem;
-      color: #6ea8ff;
-      margin-bottom: 10px;
-    }
-
-    .page-hero p {
-      font-size: 1.2rem;
-      color: #a0c4ff;
-    }
-
-    .content-box {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(110, 168, 255, 0.2);
-      padding: 40px 30px;
-      border-radius: 8px;
-      margin-bottom: 30px;
-      text-align: left; /* Kept left-aligned for readability */
-    }
-
-    .content-box h2 {
-      color: #6ea8ff;
-      margin-top: 0;
-      font-size: 1.8rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      padding-bottom: 15px;
-      margin-bottom: 20px;
-    }
-
-    .content-box p {
-      font-size: 1.1rem;
-      color: #d1e3ff;
-      margin-bottom: 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 12px;
-      color: #666;
-    }
-
-    /* Mobile Responsiveness */
+    .wl-utility { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; max-width: 220px; }
+    .wl-mini-btn { background: #6ea8ff; color: #05070a; min-width: 100px; padding: 10px 20px; border-radius: 2px; text-decoration: none; font-weight: 800; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; text-align: center; display: flex; justify-content: center; align-items: center; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .wl-mini-btn:hover { background: #fff; box-shadow: 0 0 20px rgba(110, 168, 255, 0.5); transform: translateY(-1px); }
+    .wl-calc-subtext { color: #a0c4ff; font-size: 9px; line-height: 1.3; text-align: right; font-family: 'Jost', sans-serif; }
+    .wl-tier-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 15px 0; }
+    .wl-nav-links { display: flex; gap: 45px; align-items: center; }
+    .wl-nav-links a { color: #fff; text-decoration: none; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 2.5px; opacity: 0.8; transition: 0.2s; display: flex; align-items: center; }
+    .wl-nav-links a:hover { opacity: 1; color: #6ea8ff; }
+    body { margin: 0; color: #ffffff; font-family: 'Jost', sans-serif; }
+    main { max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
+    .page-hero { text-align: center; margin-bottom: 50px; }
+    .page-hero h1 { font-size: 2.5rem; color: #6ea8ff; margin-bottom: 10px; }
+    .page-hero p { font-size: 1.2rem; color: #a0c4ff; }
+    .content-box { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(110, 168, 255, 0.2); padding: 40px 30px; border-radius: 8px; margin-bottom: 30px; text-align: left; }
+    .content-box h2 { color: #6ea8ff; margin-top: 0; font-size: 1.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; margin-bottom: 20px; }
+    .content-box p { font-size: 1.1rem; color: #d1e3ff; margin-bottom: 0; }
+    footer { text-align: center; padding: 30px; font-size: 12px; color: #666; }
     @media (max-width: 800px) {
-      .wl-logo-svg { height: 60px; }
-      .wl-container { padding: 8px 15px 0 15px; }
-      .wl-mini-btn { padding: 8px 14px; font-size: 9px; min-width: auto; }
-      .wl-utility { max-width: 150px; }
-      .wl-calc-subtext { font-size: 8px; }
-      .wl-tier-bottom { overflow-x: auto; scrollbar-width: none; }
-      .wl-tier-bottom::-webkit-scrollbar { display: none; }
-      .wl-nav-links { gap: 25px; }
-      .wl-nav-links a { font-size: 11px; white-space: nowrap; }
-      .page-hero h1 { font-size: 1.8rem; }
-      .content-box { padding: 25px 20px; }
+      .wl-logo-svg { height: 60px; } .wl-container { padding: 8px 15px 0 15px; }
+      .wl-mini-btn { padding: 8px 14px; font-size: 9px; min-width: auto; } .wl-utility { max-width: 150px; } .wl-calc-subtext { font-size: 8px; }
+      .wl-tier-bottom { overflow-x: auto; scrollbar-width: none; } .wl-tier-bottom::-webkit-scrollbar { display: none; }
+      .wl-nav-links { gap: 25px; } .wl-nav-links a { font-size: 11px; white-space: nowrap; } .page-hero h1 { font-size: 1.8rem; } .content-box { padding: 25px 20px; }
     }
   </style>
 </head>
@@ -238,22 +84,22 @@
 <main>
   <div class="page-hero">
     <h1>Industries We Serve</h1>
-    <p>If you rely on your phone ringing to keep the lights on, we're the crew for you.</p>
+    <p>Delivering high-performance digital solutions for specialized service sectors.</p>
   </div>
   
   <section class="content-box">
     <h2>Contractors & Home Services (Roofing, HVAC, Plumbing)</h2>
-    <p>When a homeowner's AC dies in August, or a pipe bursts at 2 AM, they aren't window shopping on page 3 of Google. They are calling the very first reliable business they see. We audit and rebuild your website to ensure you own that top spot. Stop losing emergency calls to the other guy just because his website loads a half-second faster than yours.</p>
+    <p>In the home services sector, online visibility is critical. When clients require immediate assistance, they rely on top-ranking search results. We optimize your digital presence to capture high-intent local traffic, ensuring your business is positioned to receive inquiries when customers need reliable service the most.</p>
   </section>
 
   <section class="content-box">
     <h2>Legal Professionals</h2>
-    <p>The legal field is a dogfight. When potential clients are in trouble, they need a lawyer who looks professional, authoritative, and trustworthy immediately. If your website looks like it was built a decade ago, you lose trust before they even pick up the phone. We make sure your site performs perfectly on mobile phones and ranks locally for the specific cases you want to win.</p>
+    <p>The legal industry requires a digital presence that instantly communicates authority and credibility. We ensure your website reflects your firm's professionalism while implementing robust local SEO strategies. This approach connects you directly with prospective clients actively seeking your specific legal expertise in your region.</p>
   </section>
 
   <section class="content-box">
-    <h2>Auto Repair, Electricians, Landscapers & More</h2>
-    <p>The rules of the game are the same no matter what tools you carry. Your website has one job: tell people exactly what you do, where you do it, and how to hire you. If your site is slow, broken, or completely invisible to Google, it’s a leaky bucket costing you leads. We find the leaks, patch them up, and get your digital storefront working as hard as you do.</p>
+    <h2>Local Service Businesses</h2>
+    <p>Whether you operate an auto repair facility, an electrical contracting firm, or a landscaping service, your business depends on consistent local leads. Your website must effectively communicate your service offerings and service areas. We repair underperforming websites, improve site speed, and elevate search engine rankings to transform your online footprint into a reliable asset.</p>
   </section>
 </main>
 
