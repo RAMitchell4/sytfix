@@ -1,8 +1,8 @@
 // assets/js/main.js
 
 // NAV ACTIVE LINK
-document.querySelectorAll(".nav a").forEach(link => {
-  if (link.href === window.location.href) link.style.color = "#3b82f6";
+document.querySelectorAll(".wl-nav-links a").forEach(link => {
+  if (link.href === window.location.href) link.style.color = "#6ea8ff";
 });
 
 // CALCULATOR FUNCTION
@@ -50,7 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       industryData = categories;
-    });
+    })
+    .catch(err => console.error("Error loading industry stats:", err));
 
   // UPDATE INDUSTRY DROPDOWN BASED ON CATEGORY
   categorySelect.addEventListener('change', () => {
@@ -62,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cat.industries.forEach(ind => {
       const opt = document.createElement('option');
-      opt.value = JSON.stringify(ind); // Store industry data in value
+      opt.value = JSON.stringify(ind); 
       opt.textContent = ind.name;
       industrySelect.appendChild(opt);
     });
@@ -99,14 +100,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const result = calculateRevenue(data);
 
+    // Unhide the results box
     document.getElementById("results").classList.remove("hidden");
+    
+    // Format and display the numbers
     document.getElementById("currentRevenue").innerText =
-      result.current.toLocaleString("en-US", { style: "currency", currency: "USD" });
+      result.current.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
     document.getElementById("optimizedRevenue").innerText =
-      result.optimized.toLocaleString("en-US", { style: "currency", currency: "USD" });
+      result.optimized.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
     document.getElementById("monthlyLift").innerText =
-      result.lift.toLocaleString("en-US", { style: "currency", currency: "USD" });
+      "+" + result.lift.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
     document.getElementById("annualLift").innerText =
-      result.annual.toLocaleString("en-US", { style: "currency", currency: "USD" });
+      "+" + result.annual.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
   });
 });
