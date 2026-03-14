@@ -274,13 +274,35 @@ footer {
    Responsive
 ====================================== */
 @media (max-width: 768px) {
-  .calculator-form .form-row {
-    flex-direction: column;
+  /* 1. Fix the Header Layout */
+  .nav {
+    flex-direction: column; /* Stack logo and navigation vertically */
+    gap: 15px; 
+    padding: 15px 10px;
+  }
+
+  /* 2. Fix the Bleeding Navigation Links */
+  nav {
+    display: flex;
+    flex-wrap: wrap; /* Allows links to jump to a new line instead of bleeding off */
+    justify-content: center; /* Centers everything perfectly */
+    gap: 12px; /* Replaces margin-left for even spacing */
+    width: 100%;
   }
 
   nav a {
-    margin-left: 15px;
-    font-size: 0.95rem;
+    margin-left: 0; /* Clear the desktop margin so 'gap' handles it */
+    font-size: 0.85rem; /* Shrink text slightly to fit better */
+  }
+
+  /* 3. Hide the crampted descriptive text under the button */
+  .revenue-description {
+    display: none !important; 
+  }
+
+  /* Existing Mobile Styles */
+  .calculator-form .form-row {
+    flex-direction: column;
   }
 
   .hero h1 {
