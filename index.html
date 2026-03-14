@@ -7,148 +7,43 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
     /* Animated SVG Background */
-    .site-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      background: url('assets/images/background.svg') no-repeat center center;
-      background-size: cover;
-      background-color: #05070a; /* Fallback color */
-    }
-
+    .site-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; background: url('assets/images/background.svg') no-repeat center center; background-size: cover; background-color: #05070a; }
     /* Shared Header Styles */
-    .wl-header {
-      background: #05070a;
-      border-bottom: 1px solid rgba(110, 168, 255, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 10000;
-      font-family: 'Jost', sans-serif;
-    }
-    .wl-container {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 10px 30px 0 30px;
-    }
-    .wl-tier-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 15px;
-    }
+    .wl-header { background: #05070a; border-bottom: 1px solid rgba(110, 168, 255, 0.2); position: sticky; top: 0; z-index: 10000; font-family: 'Jost', sans-serif; }
+    .wl-container { max-width: 1300px; margin: 0 auto; padding: 10px 30px 0 30px; }
+    .wl-tier-top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; }
     .wl-logo-svg { height: 85px; width: auto; display: block; }
-    
-    /* New Utility Wrapper for Button & Text */
-    .wl-utility {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 6px;
-      max-width: 200px;
-    }
-    .wl-mini-btn {
-      background: #6ea8ff;
-      color: #05070a;
-      padding: 10px 20px;
-      border-radius: 2px;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-align: center;
-      display: inline-block;
-      transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    .wl-mini-btn:hover { 
-      background: #fff; 
-      box-shadow: 0 0 20px rgba(110, 168, 255, 0.5); 
-      transform: translateY(-1px);
-    }
-    .wl-calc-subtext {
-      color: #a0c4ff;
-      font-size: 9px;
-      line-height: 1.3;
-      text-align: right;
-      font-family: 'Jost', sans-serif;
-    }
-
-    .wl-tier-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 15px 0;
-    }
+    .wl-utility { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; max-width: 220px; }
+    .wl-mini-btn { background: #6ea8ff; color: #05070a; min-width: 100px; padding: 10px 20px; border-radius: 2px; text-decoration: none; font-weight: 800; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; text-align: center; display: flex; justify-content: center; align-items: center; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .wl-mini-btn:hover { background: #fff; box-shadow: 0 0 20px rgba(110, 168, 255, 0.5); transform: translateY(-1px); }
+    .wl-calc-subtext { color: #a0c4ff; font-size: 9px; line-height: 1.3; text-align: right; font-family: 'Jost', sans-serif; }
+    .wl-tier-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 15px 0; }
     .wl-nav-links { display: flex; gap: 45px; align-items: center; }
-    .wl-nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      opacity: 0.8;
-      transition: 0.2s;
-      display: flex;
-      align-items: center;
-    }
+    .wl-nav-links a { color: #fff; text-decoration: none; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 2.5px; opacity: 0.8; transition: 0.2s; display: flex; align-items: center; }
     .wl-nav-links a:hover { opacity: 1; color: #6ea8ff; }
-
-    /* Base Body Styles for Readability */
-    body {
-      margin: 0;
-      color: #ffffff;
-      font-family: 'Jost', sans-serif;
-    }
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-    }
-    .hero { text-align: center; margin-bottom: 50px; }
-    .hero h1 { font-size: 2.5rem; color: #6ea8ff; margin-bottom: 10px; }
-    .hero p { font-size: 1.2rem; color: #d1e3ff; }
     
-    .content-box {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(110, 168, 255, 0.2);
-      padding: 30px;
-      border-radius: 8px;
-      margin-bottom: 30px;
-    }
-    .content-box h2 { color: #6ea8ff; margin-top: 0; }
+    /* Base Body Styles */
+    body { margin: 0; color: #ffffff; font-family: 'Jost', sans-serif; }
+    main { max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
+    .page-hero { text-align: center; margin-bottom: 50px; }
+    .page-hero h1 { font-size: 2.5rem; color: #6ea8ff; margin-bottom: 10px; }
+    .page-hero p { font-size: 1.2rem; color: #a0c4ff; }
+    .content-box { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(110, 168, 255, 0.2); padding: 40px 30px; border-radius: 8px; margin-bottom: 30px; }
+    .content-box h2 { color: #6ea8ff; margin-top: 0; font-size: 1.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; margin-bottom: 20px; }
+    .content-box p { font-size: 1.1rem; color: #d1e3ff; margin-bottom: 15px; }
     
-    .specialties-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 40px;
-    }
-    .specialty-card {
-      background: #111;
-      border: 1px solid #333;
-      padding: 20px;
-      text-align: center;
-      border-radius: 6px;
-      width: 150px;
-    }
-    .specialty-card img { max-width: 100%; height: auto; margin-bottom: 10px; }
+    .specialties-section { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 40px; }
+    .specialty-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(110,168,255,0.1); padding: 30px 20px; text-align: center; border-radius: 6px; width: 160px; transition: 0.3s; }
+    .specialty-card:hover { border-color: #6ea8ff; transform: translateY(-5px); background: rgba(255,255,255,0.05); }
+    .specialty-card img { max-width: 60px; height: auto; margin-bottom: 15px; }
+    .specialty-card h3 { margin: 0; font-size: 1.1rem; color: #fff; }
+    
     footer { text-align: center; padding: 30px; font-size: 12px; color: #666; }
-
     @media (max-width: 800px) {
-      .wl-logo-svg { height: 60px; }
-      .wl-container { padding: 8px 15px 0 15px; }
-      .wl-mini-btn { padding: 8px 14px; font-size: 9px; }
-      .wl-utility { max-width: 140px; }
-      .wl-calc-subtext { font-size: 8px; }
-      .wl-tier-bottom { overflow-x: auto; scrollbar-width: none; }
-      .wl-tier-bottom::-webkit-scrollbar { display: none; }
-      .wl-nav-links { gap: 25px; }
-      .wl-nav-links a { font-size: 11px; white-space: nowrap; }
-      .hero h1 { font-size: 1.8rem; }
+      .wl-logo-svg { height: 60px; } .wl-container { padding: 8px 15px 0 15px; }
+      .wl-mini-btn { padding: 8px 14px; font-size: 9px; min-width: auto; } .wl-utility { max-width: 150px; } .wl-calc-subtext { font-size: 8px; }
+      .wl-tier-bottom { overflow-x: auto; scrollbar-width: none; } .wl-tier-bottom::-webkit-scrollbar { display: none; }
+      .wl-nav-links { gap: 25px; } .wl-nav-links a { font-size: 11px; white-space: nowrap; } .page-hero h1 { font-size: 1.8rem; } .content-box { padding: 25px 20px; }
     }
   </style>
 </head>
@@ -172,19 +67,15 @@
             <polygon points="0,-42 36,-21 36,21 0,42 -36,21 -36,-21" class="hex-line" />
             <circle cx="0" cy="0" r="3.5" fill="#FFF" />
           </g>
-          <text x="110" y="80">
-            <tspan class="t-web">Syt</tspan><tspan class="t-lift">FIX</tspan>
-          </text>
+          <text x="110" y="80"><tspan class="t-web">Syt</tspan><tspan class="t-lift">FIX</tspan></text>
           <text x="112" y="115" class="t-tag">ENGINEERING DIGITAL GROWTH</text>
         </svg>
       </a>
-
       <div class="wl-utility">
         <a href="calculator.html" class="wl-mini-btn">Revenue Calculator</a>
-        <div class="wl-calc-subtext" class="revenue-description">Calculate revenue from increased site traffic & see how we can help.</div>
+        <div class="wl-calc-subtext">Calculate revenue from increased site traffic & see how we can help.</div>
       </div>
     </div>
-
     <nav class="wl-tier-bottom">
       <div class="wl-nav-links">
         <a href="index.html" aria-label="Home">
@@ -202,27 +93,28 @@
 </header>
 
 <main>
-  <section class="hero">
+  <div class="page-hero">
     <h1>Maximize Your Website Revenue</h1>
-    <p>Professional web auditing for hard-working, high-value local services.</p>
+    <p>Strategic website optimization and auditing for high-value service businesses.</p>
+  </div>
+
+  <section class="content-box">
+    <h2>Transform Your Website Into a Lead-Generating Asset</h2>
+    <p>In today's competitive digital landscape, a website must be more than a digital brochure. It must function as an active sales pipeline. If your website suffers from poor search visibility, slow load times, or technical errors, it is actively degrading your user experience and costing you prospective clients.</p>
+    <p>At SytFix, we specialize in identifying and resolving the technical friction that prevents your site from converting. We bypass vanity metrics to focus entirely on actionable data: structured technical audits, comprehensive local SEO strategies, and measurable return on investment.</p>
   </section>
 
   <section class="content-box">
-    <h2>Your Website Should Be Working As Hard As You Do</h2>
-    <p>You run a tight ship. Whether you're fixing roofs, repairing AC units, or fighting for clients in court, you provide top-notch service. But if your website isn't bringing in consistent phone calls and leads, it's dead weight.</p>
-    <p>At SytFix, we don't bother with confusing tech jargon or vanity metrics. We offer straightforward website audits. We look under the hood of your website to find exactly what's broken, why your competitors are showing up on Google instead of you, and what needs to happen to turn your site into a reliable lead generator.</p>
+    <h2>Data-Driven Growth Projections</h2>
+    <p>Understanding the financial impact of digital optimization is critical. We built our Revenue Calculator to provide transparency into how improved search rankings and elevated site traffic can directly scale your bottom line.</p>
+    <p>Use the tool at the top of the page to model your current metrics and project the concrete financial benefits of a fully optimized digital presence.</p>
   </section>
 
-  <section class="content-box">
-    <h2>Try the Revenue Calculator</h2>
-    <p>Ever wonder how much money you're leaving on the table just because people can't find your website? Use our free Revenue Calculator at the top right of the screen. Plug in your numbers to see exactly how much additional income you could be making by fixing your website's performance and getting more eyes on your business.</p>
-  </section>
-
-  <h2 style="text-align: center; color: #fff;">Who We Help</h2>
+  <h2 style="text-align: center; color: #fff; margin-top: 50px;">Specialized Industry Solutions</h2>
   <section class="specialties-section">
     <div class="specialty-card">
       <img src="assets/images/specialty-law.svg" alt="Lawyer Icon">
-      <h3>Lawyers</h3>
+      <h3>Legal Practice</h3>
     </div>
     <div class="specialty-card">
       <img src="assets/images/specialty-roofing.svg" alt="Roofing Icon">
@@ -234,7 +126,7 @@
     </div>
     <div class="specialty-card">
       <img src="assets/images/specialty-1.svg" alt="Other Services Icon">
-      <h3>Other Services</h3>
+      <h3>Contractors</h3>
     </div>
   </section>
 </main>
