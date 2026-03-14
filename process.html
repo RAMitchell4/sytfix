@@ -6,200 +6,34 @@
   <title>SytFix | Our Process</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    /* Animated SVG Background */
-    .site-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      background: url('assets/images/background.svg') no-repeat center center;
-      background-size: cover;
-      background-color: #05070a; /* Fallback */
-    }
-
-    /* Shared Header Styles perfectly matched to index.html */
-    .wl-header {
-      background: #05070a;
-      border-bottom: 1px solid rgba(110, 168, 255, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 10000;
-      font-family: 'Jost', sans-serif;
-    }
-
-    .wl-container {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 10px 30px 0 30px;
-    }
-
-    .wl-tier-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 15px;
-    }
-
+    .site-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; background: url('assets/images/background.svg') no-repeat center center; background-size: cover; background-color: #05070a; }
+    .wl-header { background: #05070a; border-bottom: 1px solid rgba(110, 168, 255, 0.2); position: sticky; top: 0; z-index: 10000; font-family: 'Jost', sans-serif; }
+    .wl-container { max-width: 1300px; margin: 0 auto; padding: 10px 30px 0 30px; }
+    .wl-tier-top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; }
     .wl-logo-svg { height: 85px; width: auto; display: block; }
-
-    /* Updated Utility Container for Button + Subtext */
-    .wl-utility {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 6px;
-      max-width: 220px;
-    }
-
-    .wl-mini-btn {
-      background: #6ea8ff;
-      color: #05070a;
-      min-width: 100px; 
-      padding: 10px 20px;
-      border-radius: 2px;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    .wl-mini-btn:hover { 
-      background: #fff; 
-      box-shadow: 0 0 20px rgba(110, 168, 255, 0.5); 
-      transform: translateY(-1px);
-    }
-
-    .wl-calc-subtext {
-      color: #a0c4ff;
-      font-size: 9px;
-      line-height: 1.3;
-      text-align: right;
-      font-family: 'Jost', sans-serif;
-    }
-
-    .wl-tier-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 15px 0;
-    }
-
-    .wl-nav-links { 
-      display: flex; 
-      gap: 45px; 
-      align-items: center;
-    }
-
-    .wl-nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      opacity: 0.8;
-      transition: 0.2s;
-      display: flex;
-      align-items: center;
-    }
-
-    .wl-nav-links a:hover { 
-      opacity: 1; 
-      color: #6ea8ff; 
-    }
-
-    /* Base Body Styles */
-    body {
-      margin: 0;
-      color: #ffffff;
-      font-family: 'Jost', sans-serif;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-    }
-
-    .process-hero {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .process-hero h1 {
-      font-size: 2.5rem;
-      color: #6ea8ff;
-      margin-bottom: 10px;
-    }
-
-    .process-hero p {
-      font-size: 1.2rem;
-      color: #a0c4ff;
-    }
-
-    .content-box {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(110, 168, 255, 0.2);
-      padding: 40px 30px;
-      border-radius: 8px;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    .content-box img {
-      max-width: 80px;
-      margin-bottom: 15px;
-    }
-
-    .content-box h2 {
-      color: #6ea8ff;
-      margin-top: 0;
-      font-size: 1.8rem;
-    }
-
-    .content-box p {
-      font-size: 1.1rem;
-      color: #d1e3ff;
-      margin-bottom: 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 12px;
-      color: #666;
-    }
-
-    /* Mobile Responsiveness */
+    .wl-utility { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; max-width: 220px; }
+    .wl-mini-btn { background: #6ea8ff; color: #05070a; min-width: 100px; padding: 10px 20px; border-radius: 2px; text-decoration: none; font-weight: 800; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; text-align: center; display: flex; justify-content: center; align-items: center; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .wl-mini-btn:hover { background: #fff; box-shadow: 0 0 20px rgba(110, 168, 255, 0.5); transform: translateY(-1px); }
+    .wl-calc-subtext { color: #a0c4ff; font-size: 9px; line-height: 1.3; text-align: right; font-family: 'Jost', sans-serif; }
+    .wl-tier-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 15px 0; }
+    .wl-nav-links { display: flex; gap: 45px; align-items: center; }
+    .wl-nav-links a { color: #fff; text-decoration: none; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 2.5px; opacity: 0.8; transition: 0.2s; display: flex; align-items: center; }
+    .wl-nav-links a:hover { opacity: 1; color: #6ea8ff; }
+    body { margin: 0; color: #ffffff; font-family: 'Jost', sans-serif; }
+    main { max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
+    .process-hero { text-align: center; margin-bottom: 50px; }
+    .process-hero h1 { font-size: 2.5rem; color: #6ea8ff; margin-bottom: 10px; }
+    .process-hero p { font-size: 1.2rem; color: #a0c4ff; }
+    .content-box { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(110, 168, 255, 0.2); padding: 40px 30px; border-radius: 8px; margin-bottom: 30px; text-align: center; }
+    .content-box img { max-width: 80px; margin-bottom: 15px; }
+    .content-box h2 { color: #6ea8ff; margin-top: 0; font-size: 1.8rem; }
+    .content-box p { font-size: 1.1rem; color: #d1e3ff; margin-bottom: 0; }
+    footer { text-align: center; padding: 30px; font-size: 12px; color: #666; }
     @media (max-width: 800px) {
-      .wl-logo-svg { height: 60px; }
-      .wl-container { padding: 8px 15px 0 15px; }
-      
-      .wl-mini-btn { 
-        padding: 8px 14px; 
-        font-size: 9px; 
-        min-width: auto; 
-      }
-      .wl-utility { max-width: 150px; }
-      .wl-calc-subtext { font-size: 8px; }
-
-      .wl-tier-bottom {
-        overflow-x: auto;
-        scrollbar-width: none;
-      }
-      .wl-tier-bottom::-webkit-scrollbar { display: none; }
-      
-      .wl-nav-links { gap: 25px; }
-      .wl-nav-links a { font-size: 11px; white-space: nowrap; }
-      
-      .process-hero h1 { font-size: 1.8rem; }
+      .wl-logo-svg { height: 60px; } .wl-container { padding: 8px 15px 0 15px; }
+      .wl-mini-btn { padding: 8px 14px; font-size: 9px; min-width: auto; } .wl-utility { max-width: 150px; } .wl-calc-subtext { font-size: 8px; }
+      .wl-tier-bottom { overflow-x: auto; scrollbar-width: none; } .wl-tier-bottom::-webkit-scrollbar { display: none; }
+      .wl-nav-links { gap: 25px; } .wl-nav-links a { font-size: 11px; white-space: nowrap; } .process-hero h1 { font-size: 1.8rem; }
     }
   </style>
 </head>
@@ -209,7 +43,6 @@
 
 <header class="wl-header">
   <div class="wl-container">
-    
     <div class="wl-tier-top">
       <a href="index.html" class="wl-logo-link" aria-label="SytFix Home">
         <svg class="wl-logo-svg" viewBox="0 0 550 140" xmlns="http://www.w3.org/2000/svg">
@@ -217,40 +50,22 @@
             .t-web { font-family: 'Jost', sans-serif; font-weight: 800; font-size: 82px; fill: #fff; letter-spacing: -3px; }
             .t-lift { font-family: 'Lexend Deca', sans-serif; font-weight: 600; font-size: 84px; fill: #6ea8ff; letter-spacing: 6px; }
             .t-tag { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 18px; fill: #fff; text-transform: uppercase; letter-spacing: 5.5px; }
-            
-            .hex-line { 
-              stroke: #6ea8ff; 
-              stroke-width: 2.5; 
-              fill: none; 
-              stroke-dasharray: 450; 
-              stroke-dashoffset: 450; 
-              animation: draw 6s linear infinite; 
-            }
-            @keyframes draw { 
-              0% { stroke-dashoffset: 450; } 
-              100% { stroke-dashoffset: -450; } 
-            }
+            .hex-line { stroke: #6ea8ff; stroke-width: 2.5; fill: none; stroke-dasharray: 450; stroke-dashoffset: 450; animation: draw 6s linear infinite; }
+            @keyframes draw { 0% { stroke-dashoffset: 450; } 100% { stroke-dashoffset: -450; } }
           </style>
-          
           <g transform="translate(45, 70)">
             <polygon points="0,-42 36,-21 36,21 0,42 -36,21 -36,-21" class="hex-line" />
             <circle cx="0" cy="0" r="3.5" fill="#FFF" />
           </g>
-          
-          <text x="110" y="80">
-            <tspan class="t-web">Syt</tspan><tspan class="t-lift">FIX</tspan>
-          </text>
-          
+          <text x="110" y="80"><tspan class="t-web">Syt</tspan><tspan class="t-lift">FIX</tspan></text>
           <text x="112" y="115" class="t-tag">ENGINEERING DIGITAL GROWTH</text>
         </svg>
       </a>
-
       <div class="wl-utility">
         <a href="calculator.html" class="wl-mini-btn">Revenue Calculator</a>
         <div class="wl-calc-subtext">Calculate revenue from increased site traffic & see how we can help.</div>
       </div>
     </div>
-
     <nav class="wl-tier-bottom">
       <div class="wl-nav-links">
         <a href="index.html" aria-label="Home">
@@ -264,31 +79,31 @@
         <a href="contact.html">Contact</a>
       </div>
     </nav>
-
   </div>
 </header>
+
 <main>
   <div class="process-hero">
-    <h1>How We Fix Your Funnel</h1>
-    <p>No guesswork. No confusing tech jargon. Just a straight-shooting process to get your phone ringing.</p>
+    <h1>Strategic Website Optimization</h1>
+    <p>A transparent, data-driven process designed to maximize your digital reach and increase revenue.</p>
   </div>
   
   <section class="content-box">
     <img src="assets/images/process-step1.svg" alt="Step 1 Icon">
-    <h2>Step 1: The Multi-Point Inspection</h2>
-    <p>Think of this like hooking a work truck up to a diagnostic machine. If it’s not running right, we don't just kick the tires and guess. We put your website on the lift and look under the hood. We run a comprehensive audit to find the hidden leaks—slow loading pages, broken links, or confusing menus—that are actively frustrating your customers and driving them straight to your competitors. We find exactly what is costing you money.</p>
+    <h2>Step 1: Comprehensive Site Audit</h2>
+    <p>We begin with a thorough technical and performance audit of your current website. We analyze load times, user experience, link structures, and search engine visibility. Our objective is to identify the exact roadblocks preventing your site from converting visitors into paying clients.</p>
   </section>
 
   <section class="content-box">
     <img src="assets/images/process-step2.svg" alt="Step 2 Icon">
-    <h2>Step 2: The Blueprint</h2>
-    <p>Once we find the problems, we aren't going to hand you a 50-page tech manual that requires a computer science degree to read. We hand you a simple, bottom-line blueprint. We show you exactly what needs fixing, how we’re going to fix it, and most importantly, how those fixes translate into more traffic and more paying jobs. Total transparency, no BS.</p>
+    <h2>Step 2: The Strategic Blueprint</h2>
+    <p>Once our audit is complete, we provide a clear, actionable roadmap. Rather than relying on confusing technical reports, we deliver a straightforward strategy detailing what needs to be fixed, how we will implement those changes, and the projected impact on your business’s lead generation.</p>
   </section>
 
   <section class="content-box">
     <img src="assets/images/process-step3.svg" alt="Step 3 Icon">
     <h2>Step 3: Execution & Growth</h2>
-    <p>This is where we get our hands dirty. You focus on running your business, and we go to work rebuilding your digital foundation. We patch the holes, speed up the engine, and structure your site so Google actually wants to show it to people. The end goal? When someone in your town searches for the exact services you offer, you’re the first name they see.</p>
+    <p>We handle the technical implementation so you can focus on running your business. We resolve underlying errors, optimize your site architecture for local search (SEO), and ensure your business ranks prominently when potential clients are actively searching for the services you offer.</p>
   </section>
 </main>
 
