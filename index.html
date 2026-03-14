@@ -1,44 +1,94 @@
-)<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SytFix | Contact Us</title>
-  <meta name="description" content="Ready to elevate your online presence? Contact SytFix today to schedule your comprehensive site audit and discover your true revenue potential.">
+  <title>SytFix | Professional Web Auditing & Digital Growth</title>
+  <meta name="description" content="SytFix provides expert web auditing, technical SEO, and digital growth strategies for high-value service businesses. Based in Waco, TX, serving clients nationwide.">
+  <meta name="keywords" content="web audit, SEO, digital growth, contractor marketing, legal SEO, website optimization, Waco TX">
+  <meta name="author" content="R. Alex Mitchell IV">
   
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "SytFix",
+    "founder": { "@type": "Person", "name": "R. Alex Mitchell IV" },
+    "telephone": "+1-254-709-0656",
+    "address": { "@type": "PostalAddress", "addressLocality": "Waco", "addressRegion": "TX", "addressCountry": "US" },
+    "description": "Engineering Digital Growth through strategic website optimization and technical SEO."
+  }
+  </script>
+
   <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&amp;display=swap" rel="stylesheet">
   
   <style>
-    /* Use the EXACT same <style> block from index.html here to keep CSS consistent */
-    :root { --bg-color: #05070a; --bg-overlay: rgba(255, 255, 255, 0.03); --text-main: #ffffff; --text-muted: #a0c4ff; --brand-blue: #6ea8ff; --border-color: rgba(110, 168, 255, 0.2); --card-bg: rgba(255, 255, 255, 0.02); --card-hover: rgba(255, 255, 255, 0.06); }
-    [data-theme="light"] { --bg-color: #f4f7f9; --bg-overlay: #ffffff; --text-main: #111827; --text-muted: #4b5563; --brand-blue: #2563eb; --border-color: #d1d5db; --card-bg: #ffffff; --card-hover: #f9fafb; }
-    body { margin: 0; background-color: var(--bg-color); color: var(--text-main); font-family: 'Outfit', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
+    /* Strict Mobile Reset */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { overflow-x: hidden; width: 100%; margin: 0; padding: 0; }
+
+    :root {
+      --bg-color: #05070a;
+      --bg-overlay: rgba(255, 255, 255, 0.03);
+      --text-main: #ffffff;
+      --text-muted: #a0c4ff;
+      --brand-blue: #6ea8ff;
+      --border-color: rgba(110, 168, 255, 0.2);
+      --card-bg: rgba(255, 255, 255, 0.02);
+      --card-hover: rgba(255, 255, 255, 0.06);
+    }
+    [data-theme="light"] {
+      --bg-color: #f4f7f9;
+      --bg-overlay: #ffffff;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --brand-blue: #2563eb;
+      --border-color: #d1d5db;
+      --card-bg: #ffffff;
+      --card-hover: #f9fafb;
+    }
+
+    body { background-color: var(--bg-color); color: var(--text-main); font-family: 'Outfit', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
     .site-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; background: url('assets/images/background.svg') no-repeat center center; background-size: cover; opacity: 1; transition: 0.3s; }
     [data-theme="light"] .site-background { filter: invert(1); opacity: 0.05; }
+
     .wl-header { background: var(--bg-color); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 10000; transition: background-color 0.3s ease; }
-    .wl-container { max-width: 1300px; margin: 0 auto; padding: 10px 30px 0 30px; }
-    .wl-tier-top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; }
-    .wl-logo-svg { height: 105px; width: auto; display: block; }
-    .wl-utility { display: flex; align-items: center; gap: 15px; }
+    .wl-container { max-width: 1300px; margin: 0 auto; padding: 10px 20px 0 20px; }
+    
+    /* Safely Wrapped Header Elements */
+    .wl-tier-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; padding-bottom: 15px; }
+    
+    /* Width-Based Logo (Prevents iOS Blowouts) */
+    .wl-logo-link { display: block; max-width: 100%; text-decoration: none; }
+    .wl-logo-svg { width: 340px; max-width: 100%; height: auto; display: block; }
+    
+    .wl-utility { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 15px; }
     .theme-toggle { background: none; border: 1px solid var(--border-color); color: var(--text-main); cursor: pointer; padding: 8px 12px; border-radius: 4px; font-size: 14px; transition: 0.3s; display: flex; align-items: center; justify-content: center; }
     .theme-toggle:hover { border-color: var(--brand-blue); color: var(--brand-blue); }
-    .wl-mini-btn { background: var(--brand-blue); color: #ffffff; min-width: 140px; padding: 12px 24px; border-radius: 4px; text-decoration: none; font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; text-align: center; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .wl-mini-btn { background: var(--brand-blue); color: #ffffff; padding: 12px 24px; border-radius: 4px; text-decoration: none; font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; text-align: center; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
     .wl-mini-btn:hover { background: var(--text-main); color: var(--bg-color); box-shadow: 0 0 20px rgba(110, 168, 255, 0.5); transform: translateY(-2px); }
+    
     .wl-tier-bottom { border-top: 1px solid var(--border-color); padding: 15px 0; }
-    .wl-nav-links { display: flex; gap: 45px; align-items: center; }
+    .wl-nav-links { display: flex; flex-wrap: wrap; gap: 35px; align-items: center; }
     .wl-nav-links a { color: var(--text-main); text-decoration: none; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; opacity: 0.85; transition: all 0.3s ease; display: inline-block; }
     .wl-nav-links a:hover { opacity: 1; color: var(--brand-blue); transform: translateY(-2px); }
-    main { max-width: 700px; margin: 50px auto; padding: 0 20px; line-height: 1.7; }
+    
+    main { max-width: 900px; margin: 50px auto; padding: 0 20px; line-height: 1.7; }
     .page-hero { text-align: center; margin-bottom: 60px; }
-    .page-hero h1 { font-size: 3rem; color: var(--text-main); margin-bottom: 10px; font-weight: 800; }
+    .page-hero h1 { font-size: 3.2rem; color: var(--text-main); margin-bottom: 10px; font-weight: 800; line-height: 1.2; }
     .page-hero h1 span { color: var(--brand-blue); }
-    .page-hero p { font-size: 1.25rem; color: var(--text-muted); font-weight: 400; }
-    .content-box { background: var(--bg-overlay); border: 1px solid var(--border-color); padding: 45px 40px; border-radius: 8px; margin-bottom: 30px; transition: 0.3s; text-align: center; }
-    .content-box h2 { color: var(--brand-blue); margin-top: 0; font-size: 1.8rem; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 20px; }
-    .content-box p { font-size: 1.15rem; color: var(--text-main); margin-bottom: 30px; font-weight: 300; }
-    .contact-email { display: inline-block; background: var(--bg-color); border: 1px solid var(--border-color); padding: 15px 30px; border-radius: 4px; color: var(--brand-blue); font-size: 1.4rem; font-weight: 800; text-decoration: none; transition: 0.3s; }
-    .contact-email:hover { border-color: var(--brand-blue); box-shadow: 0 0 15px rgba(110, 168, 255, 0.2); color: var(--text-main); }
+    .page-hero p { font-size: 1.25rem; color: var(--text-muted); font-weight: 400; margin-top: 0; }
+    
+    .content-box { background: var(--bg-overlay); border: 1px solid var(--border-color); padding: 45px 40px; border-radius: 8px; margin-bottom: 30px; transition: 0.3s; }
+    .content-box h2 { color: var(--brand-blue); margin-top: 0; font-size: 1.8rem; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 20px; line-height: 1.3; }
+    .content-box p { font-size: 1.15rem; color: var(--text-main); margin-bottom: 15px; font-weight: 300; }
+    
+    .specialties-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 40px; }
+    .specialty-card { background: var(--card-bg); border: 1px solid var(--border-color); padding: 35px 20px; text-align: center; border-radius: 6px; transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: default; }
+    .specialty-card:hover { border-color: var(--brand-blue); transform: translateY(-5px); background: var(--card-hover); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    .specialty-card h3 { margin: 0; font-size: 1.1rem; color: var(--text-main); line-height: 1.4; font-weight: 600; }
+    
     .site-footer { border-top: 1px solid var(--border-color); background: var(--bg-overlay); padding: 50px 20px 20px 20px; margin-top: 60px; transition: 0.3s; }
     .footer-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 40px; }
     .footer-brand .static-logo { max-width: 150px; margin-bottom: 10px; }
@@ -49,8 +99,29 @@
     .footer-contact a { color: var(--text-main); text-decoration: none; font-weight: 600; transition: 0.3s; }
     .footer-contact a:hover { color: var(--brand-blue); }
     .footer-bottom { text-align: center; padding-top: 20px; font-size: 0.9rem; color: var(--text-muted); }
-    @media (max-width: 800px) {
-      .wl-logo-svg { height: 75px; } .wl-container { padding: 15px 15px 0 15px; } .wl-mini-btn { padding: 10px 14px; font-size: 10px; min-width: auto; } .theme-toggle { padding: 6px 10px; } .wl-tier-bottom { overflow-x: auto; scrollbar-width: none; } .wl-tier-bottom::-webkit-scrollbar { display: none; } .wl-nav-links { gap: 25px; } .wl-nav-links a { font-size: 11px; white-space: nowrap; } .page-hero h1 { font-size: 2.2rem; } .content-box { padding: 30px 20px; } .contact-email { font-size: 1.1rem; padding: 12px 20px; } .footer-grid { grid-template-columns: 1fr; text-align: center; }
+
+    /* Flawless Mobile Stacking */
+    @media (max-width: 950px) {
+      .wl-container { padding: 15px 15px 0 15px; }
+      .wl-tier-top { flex-direction: column; justify-content: center; text-align: center; padding-bottom: 20px; }
+      .wl-logo-svg { width: 280px; margin: 0 auto; }
+      
+      .wl-utility { width: 100%; gap: 10px; }
+      .wl-mini-btn { flex-grow: 1; padding: 12px; font-size: 11px; }
+      
+      .wl-nav-links { justify-content: center; gap: 15px; padding: 5px 0; }
+      .wl-nav-links a { font-size: 10px; }
+      
+      main { margin: 30px auto; padding: 0 15px; }
+      .page-hero { margin-bottom: 40px; }
+      .page-hero h1 { font-size: 2.3rem; line-height: 1.1; }
+      .page-hero p { font-size: 1.1rem; }
+      .content-box { padding: 30px 20px; }
+      
+      .specialties-section { grid-template-columns: 1fr; }
+      
+      .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+      .footer-brand .static-logo { margin: 0 auto 15px auto; display: block; }
     }
   </style>
 </head>
@@ -76,7 +147,10 @@
               <rect class="growth-bar" x="0" y="-15" width="6" height="15" rx="1" style="animation-delay: 1.2s" /> <rect class="growth-bar" x="10" y="-25" width="6" height="25" rx="1" style="animation-delay: 1.3s" /> <rect class="growth-bar" x="20" y="-40" width="6" height="40" rx="1" style="animation-delay: 1.4s" />
             </g>
           </g>
-          <g transform="translate(115, 0)"><text y="85"><tspan class="font-syt">Syt</tspan><tspan class="font-fix">Fix</tspan></text><text y="120" class="font-tag">Engineering Digital Growth</text></g>
+          <g transform="translate(115, 0)">
+            <text y="85"><tspan class="font-syt">Syt</tspan><tspan class="font-fix">Fix</tspan></text>
+            <text y="120" class="font-tag">Engineering Digital Growth</text>
+          </g>
         </svg>
       </a>
       <div class="wl-utility">
@@ -97,16 +171,49 @@
 
 <main>
   <div class="page-hero">
-    <h1>Get In <span>Touch</span></h1>
-    <p>Ready to elevate your online presence? Contact us to schedule your comprehensive site audit.</p>
+    <h1>Maximize Your <span>Revenue</span></h1>
+    <p>Strategic website optimization and auditing for high-value service businesses.</p>
   </div>
-  
-  <div class="content-box">
-    <h2>Request Your Assessment</h2>
-    <p>Send us your website URL along with a brief overview of your current digital challenges. Our team will conduct a preliminary review and provide an honest assessment of how our optimization services can accelerate your business growth.</p>
-    
-    <a href="mailto:contact@sytfix.com" class="contact-email">contact@sytfix.com</a>
-  </div>
+
+  <section class="content-box">
+    <h2>Transform Your Website Into an Asset</h2>
+    <p>In today's competitive digital landscape, a website must be more than a digital brochure. It must function as an active sales pipeline. If your website suffers from poor search visibility, slow load times, or technical errors, it is actively degrading your user experience and costing you prospective clients.</p>
+    <p>At SytFix, we specialize in identifying and resolving the technical friction that prevents your site from converting. We bypass vanity metrics to focus entirely on actionable data: structured technical audits, comprehensive local SEO strategies, and measurable return on investment.</p>
+  </section>
+
+  <section class="content-box">
+    <h2>Data-Driven Growth Projections</h2>
+    <p>Understanding the financial impact of digital optimization is critical. We built our Revenue Calculator to provide transparency into how improved search rankings and elevated site traffic can directly scale your bottom line.</p>
+    <p>Use the <strong>Discover Your ROI</strong> tool at the top of the page to model your current metrics and project the concrete financial benefits of a fully optimized digital presence.</p>
+  </section>
+
+  <h2 style="text-align: center; color: var(--text-main); margin-top: 50px;">Specialized Industry Solutions</h2>
+  <section class="specialties-section">
+    <div class="specialty-card">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--brand-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 15px;"><path d="M12 3v18"></path><path d="M3 9l9-4 9 4"></path><path d="M3 9c0 3 2.5 5 5 5s5-2 5-5"></path><path d="M11 9c0 3 2.5 5 5 5s5-2 5-5"></path></svg>
+      <h3>Legal Practice</h3>
+    </div>
+    <div class="specialty-card">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--brand-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 15px;"><path d="M12 2v20"></path><path d="M12 2a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4"></path><path d="M12 2a4 4 0 0 0-4 4v12a4 4 0 0 0 4 4"></path><path d="M4 12h16"></path><path d="M12 22V2"></path></svg>
+      <h3>HVAC & Roofing</h3>
+    </div>
+    <div class="specialty-card">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--brand-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 15px;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+      <h3>Plumbing & Electrical</h3>
+    </div>
+    <div class="specialty-card">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--brand-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 15px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="4"></line><line x1="8" y1="2" x2="8" y2="4"></line><line x1="12" y1="10" x2="12" y2="16"></line><line x1="9" y1="13" x2="15" y2="13"></line></svg>
+      <h3>Dental & Medical</h3>
+    </div>
+    <div class="specialty-card">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--brand-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 15px;"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"></path></svg>
+      <h3>Damage Restoration</h3>
+    </div>
+    <div class="specialty-card">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--brand-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 15px;"><path d="M12 2l3 5h-6z"></path><path d="M22 12A10 10 0 0 0 12 2v20a10 10 0 0 0 10-10Z"></path></svg>
+      <h3>Specialty Contractors</h3>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer">
@@ -127,12 +234,31 @@
       <p>Based in Waco, TX — Serving Clients Nationwide</p>
     </div>
   </div>
-  <div class="footer-bottom">&copy; 2026 SytFix. All rights reserved.</div>
+  <div class="footer-bottom">
+    &copy; 2026 SytFix. All rights reserved.
+  </div>
 </footer>
+
 <script>
-  const toggleBtn = document.getElementById('themeToggle'); const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-  if (currentTheme) { document.body.setAttribute('data-theme', currentTheme); if (currentTheme === 'light') { toggleBtn.textContent = '🌙'; } }
-  toggleBtn.addEventListener('click', () => { let theme = document.body.getAttribute('data-theme'); if (theme === 'light') { document.body.removeAttribute('data-theme'); localStorage.setItem('theme', 'dark'); toggleBtn.textContent = '☀️'; } else { document.body.setAttribute('data-theme', 'light'); localStorage.setItem('theme', 'light'); toggleBtn.textContent = '🌙'; } });
+  const toggleBtn = document.getElementById('themeToggle');
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  if (currentTheme) {
+    document.body.setAttribute('data-theme', currentTheme);
+    if (currentTheme === 'light') { toggleBtn.textContent = '🌙'; }
+  }
+  toggleBtn.addEventListener('click', () => {
+    let theme = document.body.getAttribute('data-theme');
+    if (theme === 'light') {
+      document.body.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'dark');
+      toggleBtn.textContent = '☀️';
+    } else {
+      document.body.setAttribute('data-theme', 'light');
+      localStorage.setItem('theme', 'light');
+      toggleBtn.textContent = '🌙';
+    }
+  });
 </script>
+
 </body>
 </html>
