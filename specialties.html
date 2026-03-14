@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SytFix | Specialties</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;800&amp;display=swap" rel="stylesheet">
   <style>
-    /* Paste the EXACT same <style> block from index.html here for consistency */
     .site-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; background: url('assets/images/background.svg') no-repeat center center; background-size: cover; background-color: #05070a; }
     .wl-header { background: #05070a; border-bottom: 1px solid rgba(110, 168, 255, 0.2); position: sticky; top: 0; z-index: 10000; font-family: 'Jost', sans-serif; }
     .wl-container { max-width: 1300px; margin: 0 auto; padding: 10px 30px 0 30px; }
@@ -44,20 +44,57 @@
   <div class="wl-container">
     <div class="wl-tier-top">
       <a href="index.html" class="wl-logo-link" aria-label="SytFix Home">
-        <svg class="wl-logo-svg" viewBox="0 0 550 140" xmlns="http://www.w3.org/2000/svg">
+        <svg class="wl-logo-svg" viewBox="0 0 550 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="neonGlow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
           <style>
-            .t-web { font-family: 'Jost', sans-serif; font-weight: 800; font-size: 82px; fill: #ffffff; letter-spacing: -3px; }
-            .t-lift { font-family: 'Lexend Deca', sans-serif; font-weight: 600; font-size: 84px; fill: #6ea8ff; letter-spacing: 6px; }
-            .t-tag { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 18px; fill: #ffffff; text-transform: uppercase; letter-spacing: 5.5px; }
-            .hex-line { stroke: #6ea8ff; stroke-width: 2.5; fill: none; stroke-dasharray: 450; stroke-dashoffset: 450; animation: draw 6s linear infinite; }
-            @keyframes draw { 0% { stroke-dashoffset: 450; } 100% { stroke-dashoffset: -450; } }
+            .font-syt { font-family: 'Jost', sans-serif; font-weight: 800; font-size: 74px; fill: #ffffff; opacity: 0; animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.5s forwards; }
+            .font-fix { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 74px; fill: #6ea8ff; opacity: 0; animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.7s forwards; }
+            .font-tag { font-family: 'Jost', sans-serif; font-weight: 500; font-size: 14px; fill: #a0c4ff; letter-spacing: 5px; text-transform: uppercase; opacity: 0; animation: fadeSlideUp 0.6s ease-out 2s forwards; }
+            .node { fill: #ffffff; opacity: 0; animation: popIn 0.3s ease-out forwards; }
+            .line { stroke: #6ea8ff; stroke-width: 2; fill: none; stroke-dasharray: 100; stroke-dashoffset: 100; animation: connect 0.5s ease-out forwards; }
+            .energy { stroke: #ffffff; stroke-width: 3; fill: none; stroke-dasharray: 50; stroke-dashoffset: 50; filter: url(#neonGlow); animation: flow 1s linear forwards; }
+            .hex-base { stroke: #6ea8ff; stroke-width: 2; fill: rgba(110, 168, 255, 0.0); stroke-dasharray: 180; stroke-dashoffset: 180; animation: drawHex 1s ease-out 0.8s forwards; }
+            .growth-bar { fill: #ffffff; filter: url(#neonGlow); transform-origin: bottom; transform: scaleY(0); animation: growBar 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+            @keyframes popIn { 100% { opacity: 1; } }
+            @keyframes connect { 100% { stroke-dashoffset: 0; } }
+            @keyframes flow { 100% { stroke-dashoffset: -50; opacity: 0; } }
+            @keyframes drawHex { 100% { stroke-dashoffset: 0; fill: rgba(110, 168, 255, 0.15); } }
+            @keyframes growBar { 100% { transform: scaleY(1); } }
+            @keyframes fadeSlideUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
           </style>
-          <g transform="translate(45, 70)">
-            <polygon points="0,-42 36,-21 36,21 0,42 -36,21 -36,-21" class="hex-line" />
-            <circle cx="0" cy="0" r="3.5" fill="#ffffff" />
+          <g transform="translate(60, 80)">
+            <g transform="translate(-10, 0)">
+              <circle class="node" cx="-30" cy="-20" r="3" style="animation-delay: 0.1s" />
+              <circle class="node" cx="-40" cy="20" r="3" style="animation-delay: 0.2s" />
+              <circle class="node" cx="-10" cy="30" r="3" style="animation-delay: 0.3s" />
+              <circle class="node" cx="0" cy="0" r="4" style="animation-delay: 0.4s" />
+              <path class="line" d="M -30,-20 L 0,0" style="animation-delay: 0.3s" />
+              <path class="line" d="M -40,20 L 0,0" style="animation-delay: 0.4s" />
+              <path class="line" d="M -10,30 L 0,0" style="animation-delay: 0.5s" />
+              <path class="energy" d="M -30,-20 L 0,0" style="animation-delay: 0.6s" />
+              <path class="energy" d="M -40,20 L 0,0" style="animation-delay: 0.7s" />
+            </g>
+            <polygon class="hex-base" points="0,-30 26,-15 26,15 0,30 -26,15 -26,-15" />
+            <g transform="translate(-12, 10)">
+              <rect class="growth-bar" x="0" y="-15" width="6" height="15" rx="1" style="animation-delay: 1.2s" />
+              <rect class="growth-bar" x="10" y="-25" width="6" height="25" rx="1" style="animation-delay: 1.3s" />
+              <rect class="growth-bar" x="20" y="-40" width="6" height="40" rx="1" style="animation-delay: 1.4s" />
+            </g>
           </g>
-          <text x="110" y="80"><tspan class="t-web">Syt</tspan><tspan class="t-lift">FIX</tspan></text>
-          <text x="112" y="115" class="t-tag">ENGINEERING DIGITAL GROWTH</text>
+          <g transform="translate(125, 0)">
+            <text y="95">
+              <tspan class="font-syt">Syt</tspan><tspan class="font-fix">Fix</tspan>
+            </text>
+            <text y="130" class="font-tag">Engineering Digital Growth</text>
+          </g>
         </svg>
       </a>
       <div class="wl-utility">
