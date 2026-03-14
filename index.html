@@ -5,9 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SytFix | Home</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Animated SVG Background */
+    .site-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      background: url('assets/images/background.svg') no-repeat center center;
+      background-size: cover;
+    }
+  </style>
 </head>
 <body>
-  
+
+<div class="site-background"></div>
+
 <header class="wl-header">
   <div class="wl-container">
     
@@ -148,7 +163,7 @@
   @media (max-width: 800px) {
     .wl-logo-svg { height: 60px; }
     .wl-container { padding: 8px 15px 0 15px; }
-
+    
     .wl-mini-btn { 
       padding: 8px 14px; 
       font-size: 10px; 
@@ -159,16 +174,38 @@
       overflow-x: auto;
       scrollbar-width: none;
     }
-
     .wl-tier-bottom::-webkit-scrollbar { display: none; }
-
+    
     .wl-nav-links { gap: 25px; }
     .wl-nav-links a { font-size: 11px; white-space: nowrap; }
   }
 </style>
 
-<main style="min-height: 70vh;">
-  </main>
+<main>
+  <section class="hero">
+    <h1>Maximize Your Website Revenue</h1>
+    <p>Professional web auditing for high-value local services</p>
+  </section>
+
+  <section class="specialties-section container">
+    <div class="specialty-card">
+      <img src="assets/images/specialty-law.svg" alt="Lawyer">
+      <h3>Lawyers</h3>
+    </div>
+    <div class="specialty-card">
+      <img src="assets/images/specialty-roofing.svg" alt="Roofing">
+      <h3>Roofing</h3>
+    </div>
+    <div class="specialty-card">
+      <img src="assets/images/specialty-hvac.svg" alt="HVAC">
+      <h3>HVAC</h3>
+    </div>
+    <div class="specialty-card">
+      <img src="assets/images/specialty-1.svg" alt="Other Services">
+      <h3>Other Services</h3>
+    </div>
+  </section>
+</main>
 
 <footer>
   &copy; 2026 SytFix. All rights reserved.
