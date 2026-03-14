@@ -1,13 +1,7 @@
 <svg class="wl-logo-svg" viewBox="0 0 550 180" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6ea8ff" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#6ea8ff" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="1"/>
-    </linearGradient>
-    
-    <filter id="eliteGlow">
-      <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+    <filter id="blueprintGlow">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -18,57 +12,63 @@
   <style>
     <![CDATA[
     /* The ampersand has been entirely removed to prevent XML strict parsing errors */
-    @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;800');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800');
     
-    .logo-text-syt { font-family: 'Jost', sans-serif; font-weight: 800; font-size: 72px; fill: #ffffff; letter-spacing: -2px; opacity: 0; animation: fadeTextIn 0.5s ease-out 3s forwards; }
-    .logo-text-fix { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 72px; fill: #6ea8ff; letter-spacing: -2px; opacity: 0; animation: fadeTextIn 0.5s ease-out 3.2s forwards; }
-    .logo-tagline { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 14px; fill: #ffffff; text-transform: uppercase; letter-spacing: 5px; opacity: 0; animation: fadeTextIn 0.8s ease-out 3.5s forwards; }
+    .bp-text-syt { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 70px; fill: #ffffff; letter-spacing: -2px; opacity: 0; animation: bpFadeIn 0.5s ease-out 3s forwards; }
+    .bp-text-fix { font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 70px; fill: #6ea8ff; letter-spacing: -2px; opacity: 0; animation: bpFadeIn 0.5s ease-out 3.2s forwards; }
+    .bp-tagline { font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 14px; fill: #ffffff; text-transform: uppercase; letter-spacing: 5px; opacity: 0; animation: bpFadeIn 0.8s ease-out 3.5s forwards; }
 
-    .mono-path { stroke: #6ea8ff; stroke-width: 2.5; fill: none; stroke-dasharray: 400; stroke-dashoffset: 400; filter: url(#eliteGlow); animation: constructSF 2.5s cubic-bezier(0.77, 0, 0.175, 1) forwards; }
+    .bp-schematic { stroke: #6ea8ff; stroke-width: 1.5; fill: none; opacity: 0.6; stroke-dasharray: 200; stroke-dashoffset: 200; filter: url(#blueprintGlow); animation: schematicDraw 1s ease-out 0s forwards; }
     
-    .broken-node { fill: #6ea8ff; opacity: 0.7; animation: nodeScatter 2s ease-in-out infinite alternate; }
+    .bp-bar { fill: #6ea8ff; transform-origin: bottom; transform: scaleY(0); animation: barOptimize 1s cubic-bezier(0.19, 1, 0.22, 1) 2s forwards; }
     
-    .surge-pulse { stroke: #ffffff; stroke-width: 0; fill: none; opacity: 0; animation: surgeEffect 1s ease-out 2.2s; }
+    .bp-scan { stroke: #ffffff; stroke-width: 3; filter: url(#blueprintGlow); animation: bpScanEffect 2s ease-in-out 1s; opacity: 0;}
 
-    @keyframes nodeScatter {
-      0% { transform: translate(0, 0); opacity: 0.7; }
-      100% { transform: translate(calc(var(--scatter-x)*1px), calc(var(--scatter-y)*1px)); opacity: 0.2; }
-    }
-
-    @keyframes constructSF {
-      0% { stroke-dashoffset: 400; stroke: #6ea8ff; stroke-width: 2.5; }
-      70% { stroke-dashoffset: 0; stroke: #6ea8ff; stroke-width: 2.5; }
-      100% { stroke-dashoffset: 0; stroke: #ffffff; stroke-width: 4; }
+    @keyframes bpScanEffect {
+      0% { transform: translate(-100px, 0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translate(500px, 0); opacity: 0; }
     }
     
-    @keyframes fadeTextIn {
+    @keyframes schematicDraw {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes barOptimize {
+      to { transform: scaleY(1); fill: #6ea8ff; filter: none;}
+    }
+
+    @keyframes bpFadeIn {
       to { opacity: 1; transform: translate(0,0); }
-    }
-    
-    @keyframes surgeEffect {
-      0% { stroke-width: 0; r: 0; opacity: 0.8; }
-      100% { stroke-width: 20; r: 100; opacity: 0; }
     }
     ]]>
   </style>
 
-  <g transform="translate(20, 10)">
-    <g class="nodes-group">
-      <circle class="broken-node" cx="60" cy="50" r="4" style="--scatter-x: -30; --scatter-y: -40; animation: nodeScatter 2s ease-in-out 1.2s forwards, fadeTextIn 0.1s linear 2.5s reverse forwards; "/>
-      <circle class="broken-node" cx="60" cy="110" r="4" style="--scatter-x: 30; --scatter-y: 40; animation: nodeScatter 2s ease-in-out 1s forwards, fadeTextIn 0.1s linear 2.5s reverse forwards; "/>
-      <circle class="broken-node" cx="100" cy="80" r="4" style="--scatter-x: 50; --scatter-y: -20; animation: nodeScatter 2s ease-in-out 1.5s forwards, fadeTextIn 0.1s linear 2.5s reverse forwards; "/>
+  <g transform="translate(60, 100)">
+    <g class="blueprint-group" style="animation: bpFadeIn 0.1s linear 2s reverse forwards;">
+      <path class="bp-schematic" d="M -40,-40 L 40,40 M -40,40 L 40,-40"/>
+      <circle class="bp-schematic" cx="-40" cy="-40" r="3"/>
+      <circle class="bp-schematic" cx="40" cy="40" r="3"/>
+      <circle class="bp-schematic" cx="-40" cy="40" r="3"/>
+      <circle class="bp-schematic" cx="40" cy="-40" r="3"/>
     </g>
 
-    <g transform="translate(60, 80)">
-      <path class="mono-path" d="M -25,-45 L 25,-45 L 25,-15 L -10,-15 L -10,15 L 25,15 L 25,45 L -25,45 M 0,-15 L 0,15 M -25,-15 L -15,-15"/>
-      <circle class="surge-pulse" cx="0" cy="0" r="0" />
-    </g>
+    <line class="bp-scan" x1="0" y1="-80" x2="0" y2="20" />
 
-    <g transform="translate(140, 0)">
-      <text y="90">
-        <tspan class="logo-text-syt">Syt</tspan><tspan class="logo-text-fix">Fix</tspan>
-      </text>
-      <text y="130" class="logo-tagline">Engineering Digital Growth</text>
+    <g transform="translate(-40, -60)">
+      <rect class="bp-bar" x="0" y="30" width="15" height="30" rx="2" style="animation-delay: 2.1s;"/>
+      <rect class="bp-bar" x="20" y="20" width="15" height="40" rx="2" style="animation-delay: 2.2s;"/>
+      <rect class="bp-bar" x="40" y="10" width="15" height="50" rx="2" style="animation-delay: 2.3s;"/>
+      <rect class="bp-bar" x="60" y="0" width="15" height="60" rx="2" style="animation-delay: 2.4s;"/>
+      <polygon class="bp-bar" points="60,0 75,0 67.5,-10" style="animation-delay: 2.5s;" />
     </g>
+  </g>
+
+  <g transform="translate(160, 0)">
+    <text y="90">
+      <tspan class="bp-text-syt">Syt</tspan><tspan class="bp-text-fix">Fix</tspan>
+    </text>
+    <text y="130" class="bp-tagline">Engineering Digital Growth</text>
   </g>
 </svg>
