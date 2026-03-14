@@ -24,9 +24,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&amp;display=swap" rel="stylesheet">
   
   <style>
-    /* Strict Mobile Reset */
+    /* Safe Mobile Reset (Restores Sticky Header) */
     *, *::before, *::after { box-sizing: border-box; }
-    html, body { overflow-x: hidden; width: 100%; margin: 0; padding: 0; }
+    body { width: 100%; margin: 0; padding: 0; overflow-x: clip; background-color: var(--bg-color); color: var(--text-main); font-family: 'Outfit', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
 
     :root {
       --bg-color: #05070a;
@@ -49,30 +49,35 @@
       --card-hover: #f9fafb;
     }
 
-    body { background-color: var(--bg-color); color: var(--text-main); font-family: 'Outfit', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
-    .site-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; background: url('assets/images/background.svg') no-repeat center center; background-size: cover; opacity: 1; transition: 0.3s; }
+    .site-background { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; background: url('assets/images/background.svg') no-repeat center center; background-size: cover; opacity: 1; transition: 0.3s; }
     [data-theme="light"] .site-background { filter: invert(1); opacity: 0.05; }
 
+    /* Sticky Header Restored */
     .wl-header { background: var(--bg-color); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 10000; transition: background-color 0.3s ease; }
-    .wl-container { max-width: 1300px; margin: 0 auto; padding: 10px 20px 0 20px; }
+    .wl-container { max-width: 1300px; margin: 0 auto; padding: 15px 20px 0 20px; }
     
-    /* Safely Wrapped Header Elements */
     .wl-tier-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; padding-bottom: 15px; }
-    
-    /* Width-Based Logo (Prevents iOS Blowouts) */
     .wl-logo-link { display: block; max-width: 100%; text-decoration: none; }
-    .wl-logo-svg { width: 340px; max-width: 100%; height: auto; display: block; }
+    .wl-logo-svg { width: 320px; max-width: 100%; height: auto; display: block; }
     
-    .wl-utility { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 15px; }
-    .theme-toggle { background: none; border: 1px solid var(--border-color); color: var(--text-main); cursor: pointer; padding: 8px 12px; border-radius: 4px; font-size: 14px; transition: 0.3s; display: flex; align-items: center; justify-content: center; }
-    .theme-toggle:hover { border-color: var(--brand-blue); color: var(--brand-blue); }
-    .wl-mini-btn { background: var(--brand-blue); color: #ffffff; padding: 12px 24px; border-radius: 4px; text-decoration: none; font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; text-align: center; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-    .wl-mini-btn:hover { background: var(--text-main); color: var(--bg-color); box-shadow: 0 0 20px rgba(110, 168, 255, 0.5); transform: translateY(-2px); }
+    .wl-utility { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; }
+    .wl-mini-btn { background: var(--brand-blue); color: #ffffff; padding: 12px 24px; border-radius: 4px; text-decoration: none; font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; text-align: center; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); white-space: nowrap; box-shadow: 0 4px 10px rgba(110, 168, 255, 0.2); }
+    .wl-mini-btn:hover { background: var(--text-main); color: var(--bg-color); box-shadow: 0 6px 20px rgba(110, 168, 255, 0.5); transform: translateY(-2px); }
     
+    /* Navigation Tier */
     .wl-tier-bottom { border-top: 1px solid var(--border-color); padding: 15px 0; }
-    .wl-nav-links { display: flex; flex-wrap: wrap; gap: 35px; align-items: center; }
-    .wl-nav-links a { color: var(--text-main); text-decoration: none; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; opacity: 0.85; transition: all 0.3s ease; display: inline-block; }
-    .wl-nav-links a:hover { opacity: 1; color: var(--brand-blue); transform: translateY(-2px); }
+    .wl-nav-links { display: flex; flex-wrap: wrap; gap: 35px; align-items: center; width: 100%; }
+    .wl-nav-links a { color: var(--text-main); text-decoration: none; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; opacity: 0.85; transition: color 0.3s ease; position: relative; padding-bottom: 5px; }
+    .wl-nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0%; height: 2px; background: var(--brand-blue); transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    .wl-nav-links a:hover { opacity: 1; color: var(--brand-blue); }
+    .wl-nav-links a:hover::after { width: 100%; }
+    
+    /* Theme Toggle Button matched to Nav Links */
+    .nav-theme-toggle { margin-left: auto; background: none; border: none; padding: 0 0 5px 0; cursor: pointer; color: var(--text-main); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; opacity: 0.85; transition: color 0.3s ease; font-family: 'Outfit', sans-serif; display: flex; align-items: center; gap: 8px; position: relative; }
+    .nav-theme-toggle::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0%; height: 2px; background: var(--brand-blue); transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    .nav-theme-toggle:hover { opacity: 1; color: var(--brand-blue); }
+    .nav-theme-toggle:hover::after { width: 100%; }
+    .nav-theme-toggle svg { display: block; margin-top: -2px; }
     
     main { max-width: 900px; margin: 50px auto; padding: 0 20px; line-height: 1.7; }
     .page-hero { text-align: center; margin-bottom: 60px; }
@@ -102,24 +107,21 @@
 
     /* Flawless Mobile Stacking */
     @media (max-width: 950px) {
-      .wl-container { padding: 15px 15px 0 15px; }
-      .wl-tier-top { flex-direction: column; justify-content: center; text-align: center; padding-bottom: 20px; }
+      .wl-tier-top { flex-direction: column; justify-content: center; text-align: center; padding-bottom: 20px; gap: 25px; }
       .wl-logo-svg { width: 280px; margin: 0 auto; }
+      .wl-utility { width: 100%; }
+      .wl-mini-btn { flex-grow: 1; padding: 15px; font-size: 12px; }
       
-      .wl-utility { width: 100%; gap: 10px; }
-      .wl-mini-btn { flex-grow: 1; padding: 12px; font-size: 11px; }
-      
-      .wl-nav-links { justify-content: center; gap: 15px; padding: 5px 0; }
+      .wl-nav-links { justify-content: center; gap: 20px; padding: 5px 0; }
       .wl-nav-links a { font-size: 10px; }
+      .nav-theme-toggle { margin-left: 0; font-size: 10px; } /* Centers toggle on mobile */
       
       main { margin: 30px auto; padding: 0 15px; }
       .page-hero { margin-bottom: 40px; }
       .page-hero h1 { font-size: 2.3rem; line-height: 1.1; }
       .page-hero p { font-size: 1.1rem; }
       .content-box { padding: 30px 20px; }
-      
       .specialties-section { grid-template-columns: 1fr; }
-      
       .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
       .footer-brand .static-logo { margin: 0 auto 15px auto; display: block; }
     }
@@ -154,16 +156,30 @@
         </svg>
       </a>
       <div class="wl-utility">
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle Light/Dark Mode">☀️</button>
         <a href="calculator.html" class="wl-mini-btn">Discover Your ROI</a>
       </div>
     </div>
+    
     <nav class="wl-tier-bottom">
       <div class="wl-nav-links">
-        <a href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: block; margin-top:-2px;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></a>
+        <a href="index.html" aria-label="Home">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: block; margin-top:-2px;">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </a>
         <a href="specialties.html">Specialties</a>
         <a href="process.html">Process</a>
         <a href="contact.html">Contact</a>
+        
+        <button id="themeToggle" class="nav-theme-toggle" aria-label="Toggle Light/Dark Mode">
+          <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg id="icon-moon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <span id="theme-label">Light Mode</span>
+        </button>
       </div>
     </nav>
   </div>
@@ -241,22 +257,32 @@
 
 <script>
   const toggleBtn = document.getElementById('themeToggle');
-  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-  if (currentTheme) {
-    document.body.setAttribute('data-theme', currentTheme);
-    if (currentTheme === 'light') { toggleBtn.textContent = '🌙'; }
+  const iconSun = document.getElementById('icon-sun');
+  const iconMoon = document.getElementById('icon-moon');
+  const themeLabel = document.getElementById('theme-label');
+  const currentTheme = localStorage.getItem('theme');
+
+  function enableLightMode() {
+    document.body.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+    iconSun.style.display = 'none';
+    iconMoon.style.display = 'block';
+    themeLabel.textContent = 'Dark Mode';
   }
+
+  function enableDarkMode() {
+    document.body.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'dark');
+    iconMoon.style.display = 'none';
+    iconSun.style.display = 'block';
+    themeLabel.textContent = 'Light Mode';
+  }
+
+  if (currentTheme === 'light') { enableLightMode(); } else { enableDarkMode(); }
+
   toggleBtn.addEventListener('click', () => {
-    let theme = document.body.getAttribute('data-theme');
-    if (theme === 'light') {
-      document.body.removeAttribute('data-theme');
-      localStorage.setItem('theme', 'dark');
-      toggleBtn.textContent = '☀️';
-    } else {
-      document.body.setAttribute('data-theme', 'light');
-      localStorage.setItem('theme', 'light');
-      toggleBtn.textContent = '🌙';
-    }
+    if (document.body.getAttribute('data-theme') === 'light') { enableDarkMode(); } 
+    else { enableLightMode(); }
   });
 </script>
 
