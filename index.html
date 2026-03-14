@@ -111,11 +111,14 @@
       .wl-mini-btn { flex-grow: 0; padding: 10px 12px; font-size: 10px; min-width: auto; letter-spacing: 1px; box-shadow: none; }
       
       .wl-tier-bottom { padding: 10px 0; }
-      .wl-nav-links { justify-content: space-between; gap: 15px; padding: 0; width: 100%; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
+      
+      /* FIXED: Perfectly centered and evenly spaced mobile navigation */
+      .wl-nav-links { justify-content: center; gap: 20px; padding: 0; width: 100%; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
       .wl-nav-links::-webkit-scrollbar { display: none; }
       .wl-nav-links a { font-size: 10px; letter-spacing: 1px; white-space: nowrap; }
       
-      .nav-theme-toggle { margin-left: auto; gap: 0; }
+      /* Removed the auto margin so it aligns perfectly with the other links */
+      .nav-theme-toggle { margin-left: 0; gap: 0; }
       #theme-label { display: none; } /* Hides text to save space, leaves icon */
       
       main { margin: 30px auto; padding: 0 15px; }
@@ -161,7 +164,6 @@
         <a href="calculator.html" class="wl-mini-btn">Discover Your ROI</a>
       </div>
     </div>
-    
     <nav class="wl-tier-bottom">
       <div class="wl-nav-links">
         <a href="index.html" aria-label="Home">
@@ -172,14 +174,9 @@
         <a href="specialties.html">Specialties</a>
         <a href="process.html">Process</a>
         <a href="contact.html">Contact</a>
-        
         <button id="themeToggle" class="nav-theme-toggle" aria-label="Toggle Light/Dark Mode">
-          <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
-            <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-          <svg id="icon-moon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
+          <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg id="icon-moon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
           <span id="theme-label">Light Mode</span>
         </button>
       </div>
@@ -269,7 +266,7 @@
     localStorage.setItem('theme', 'light');
     iconSun.style.display = 'none';
     iconMoon.style.display = 'block';
-    themeLabel.textContent = 'Dark Mode';
+    if(themeLabel) themeLabel.textContent = 'Dark Mode';
   }
 
   function enableDarkMode() {
@@ -277,7 +274,7 @@
     localStorage.setItem('theme', 'dark');
     iconMoon.style.display = 'none';
     iconSun.style.display = 'block';
-    themeLabel.textContent = 'Light Mode';
+    if(themeLabel) themeLabel.textContent = 'Light Mode';
   }
 
   if (currentTheme === 'light') { enableLightMode(); } else { enableDarkMode(); }
