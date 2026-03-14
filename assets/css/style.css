@@ -90,10 +90,13 @@ nav a.active {
   align-items: center;
   text-align: center;
   height: 400px;
-  background: url('../images/hero-bg.svg') no-repeat center center;
+  background-image: url('../images/hero-bg.svg'); /* Ensure correct path */
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
   position: relative;
   color: #ffffff;
+  overflow: hidden;
 }
 
 .hero::before {
@@ -101,26 +104,22 @@ nav a.active {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0,0,0,0.6);
+  z-index: 0;
 }
 
-.hero-section::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.3); /* Dims the animation slightly */
-  z-index: -1;
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
   font-size: 2.8rem;
-  z-index: 1;
   margin-bottom: 15px;
 }
 
 .hero p {
   font-size: 1.2rem;
-  z-index: 1;
   color: #cccccc;
 }
 
