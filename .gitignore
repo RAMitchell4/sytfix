@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pyo
+_deploy_archive/
+.DS_Store
+.env
+Thumbs.db

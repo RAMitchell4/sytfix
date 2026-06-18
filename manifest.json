@@ -1,0 +1,36 @@
+{
+  "name": "SytFix — Website Audits That Ship Fixes",
+  "short_name": "SytFix",
+  "description": "Website audits that deliver real fixes, not just a report.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#F8F9FC",
+  "theme_color": "#162035",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

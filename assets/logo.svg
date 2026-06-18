@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 64" fill="none">
+  <rect x="0" y="8" width="48" height="48" rx="10" fill="#162035"/>
+  <path d="M14 38 L24 18 L34 38" stroke="#E8531A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M16 38 L32 38" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="24" cy="46" r="2.25" fill="#E8531A"/>
+  <text x="60" y="40" font-family="Inter, -apple-system, sans-serif" font-size="26" font-weight="700" letter-spacing="-0.5" fill="#111827">Syt<tspan fill="#E8531A">fix</tspan></text>
+</svg>
