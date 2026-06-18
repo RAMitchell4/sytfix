@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   SytFix — app.js
+   SytFix — app.js (FIXED)
    ═══════════════════════════════════════════════ */
 (function(){
 'use strict';
@@ -159,7 +159,6 @@ function initTerminal(){
   var scoreEl=card.querySelector('.t-score-val');
   var checks=card.querySelectorAll('.score-check');
   var tgt=72,ran=false;
-  /* circumference for r=60.5: 2*PI*60.5 ≈ 380 */
   var CIRC=380;
   var obs=new IntersectionObserver(function(en){
     if(en[0].isIntersecting&&!ran){
@@ -195,32 +194,41 @@ function initParallax(){
 /* ── Calculator ── */
 function initCalc(){
   var wrap=document.querySelector('.calc-grid');if(!wrap)return;
-  function fmt(n){if(n>=1e6)return'$'+(n/1e6).toFixed(1)+'M';if(n>=1e3)return'$'+Math.round(n/1e3)+'K';return'$'+Math.round(n).toLocaleString();}
+  function fmt(n){
+    if(n>=1e6)return'$'+(n/1e6).toFixed(1)+'M';
+    if(n>=1e3)return'$'+Math.round(n/1e3)+'K';
+    return'$'+Math.round(n).toLocaleString();
+  }
   function upd(){
-    var vis=+document.getElementById('r-vis').value;
-    var conv=+document.getElementById('r-conv').value/100;
-    var val=+document.getElementById('r-val').value;
-    var cls=+document.getElementById('r-cls').value/100;
-    var tup=+document.getElementById('r-tup').value/100;
-    var cup=+document.getElementById('r-cup').value/100;
-    document.getElementById('v-vis').textContent=vis.toLocaleString();
-    document.getElementById('v-conv').textContent=(conv*100).toFixed(1)+'%';
-    document.getElementById('v-val').textContent='$'+val.toLocaleString();
-    document.getElementById('v-cls').textContent=Math.round(cls*100)+'%';
-    document.getElementById('v-tup').textContent='+'+Math.round(tup*100)+'%';
-    document.getElementById('v-cup').textContent='+'+(cup*100).toFixed(1)+'%';
-    var cL=Math.round(vis*conv),cC=Math.round(cL*cls),cR=cC*val;
-    document.getElementById('c-leads').textContent=cL;
-    document.getElementById('c-clients').textContent=cC;
-    document.getElementById('c-rev').textContent=fmt(cR);
-    var nL=Math.round(vis*(1+tup)*(conv+cup)),nC=Math.round(nL*cls),nR=nC*val;
-    document.getElementById('n-leads').textContent=nL;
-    document.getElementById('n-clients').textContent=nC;
-    document.getElementById('n-rev').textContent=fmt(nR);
-    document.getElementById('annual-gain').textContent=fmt((nR-cR)*12);
+    try{
+      var vis=parseFloat(document.getElementById('r-vis').value)||0;
+      var conv=parseFloat(document.getElementById('r-conv').value)/100||0;
+      var val=parseFloat(document.getElementById('r-val').value)||0;
+      var cls=parseFloat(document.getElementById('r-cls').value)/100||0;
+      var tup=parseFloat(document.getElementById('r-tup').value)/100||0;
+      var cup=parseFloat(document.getElementById('r-cup').value)/100||0;
+      
+      document.getElementById('v-vis').textContent=Math.round(vis).toLocaleString();
+      document.getElementById('v-conv').textContent=(conv*100).toFixed(1)+'%';
+      document.getElementById('v-val').textContent='$'+Math.round(val).toLocaleString();
+      document.getElementById('v-cls').textContent=Math.round(cls*100)+'%';
+      document.getElementById('v-tup').textContent='+'+(Math.round(tup*100))+'%';
+      document.getElementById('v-cup').textContent='+'+(cup*100).toFixed(1)+'%';
+      
+      var cL=Math.round(vis*conv),cC=Math.round(cL*cls),cR=cC*val;
+      document.getElementById('c-leads').textContent=cL.toLocaleString();
+      document.getElementById('c-clients').textContent=cC.toLocaleString();
+      document.getElementById('c-rev').textContent=fmt(cR);
+      
+      var nL=Math.round(vis*(1+tup)*(conv+cup)),nC=Math.round(nL*cls),nR=nC*val;
+      document.getElementById('n-leads').textContent=nL.toLocaleString();
+      document.getElementById('n-clients').textContent=nC.toLocaleString();
+      document.getElementById('n-rev').textContent=fmt(nR);
+      document.getElementById('annual-gain').textContent=fmt((nR-cR)*12);
+    }catch(e){console.error('Calculator error:',e);}
   }
   document.querySelectorAll('.range').forEach(function(r){r.addEventListener('input',upd);});
-  upd();
+  setTimeout(upd,100);
 }
 
 /* ── Audit ── */
